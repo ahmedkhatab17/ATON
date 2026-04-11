@@ -2,2368 +2,2369 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATON — Heat as a Service | Clean Industrial Thermal Energy</title>
-    <meta name="description"
-        content="ATON captures solar heat, stores it in sand, and delivers it directly to Egyptian factories — replacing diesel and gas with a clean, fixed-cost subscription.">
-    <link rel="icon" href="assets/logo color.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <style>
-        /* ═══════════════════════════════════════════════
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATON — Heat as a Service | Clean Industrial Thermal Energy</title>
+  <meta name="description"
+    content="ATON captures solar heat, stores it in sand, and delivers it directly to Egyptian factories — replacing diesel and gas with a clean, fixed-cost subscription.">
+  <link rel="icon" href="assets/logo color.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════
            RESET & DESIGN TOKENS
            ═══════════════════════════════════════════════ */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        :root {
-            --bg-primary: #0A0F1E;
-            --bg-secondary: #0F172A;
-            --bg-card: #141C2E;
-            --accent-amber: #F59E0B;
-            --accent-amber-dim: rgba(245, 158, 11, 0.15);
-            --accent-teal: #0D9488;
-            --accent-teal-dim: rgba(13, 148, 136, 0.15);
-            --text-primary: #F1F5F9;
-            --text-muted: #64748B;
-            --text-danger: #EF4444;
-            --border-color: rgba(241, 245, 249, 0.08);
-            --font-display: 'Bebas Neue', cursive;
-            --font-body: 'DM Sans', sans-serif;
-            --font-mono: 'DM Mono', monospace;
-        }
+    :root {
+      --bg-primary: #0A0F1E;
+      --bg-secondary: #0F172A;
+      --bg-card: #141C2E;
+      --accent-amber: #F59E0B;
+      --accent-amber-dim: rgba(245, 158, 11, 0.15);
+      --accent-teal: #0D9488;
+      --accent-teal-dim: rgba(13, 148, 136, 0.15);
+      --text-primary: #F1F5F9;
+      --text-muted: #64748B;
+      --text-danger: #EF4444;
+      --border-color: rgba(241, 245, 249, 0.08);
+      --font-display: 'Bebas Neue', cursive;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        button,
-        input {
-            font-family: inherit;
-            border: none;
-            outline: none;
-        }
+    button,
+    input {
+      font-family: inherit;
+      border: none;
+      outline: none;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            UTILITY CLASSES
            ═══════════════════════════════════════════════ */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .section-label {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--accent-amber);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-amber);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
 
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            letter-spacing: 2px;
-            line-height: 1.05;
-            margin-bottom: 40px;
-            color: var(--text-primary);
-        }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      margin-bottom: 40px;
+      color: var(--text-primary);
+    }
 
-        /* Scroll reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        /* Noise overlay */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 9999;
-        }
+    /* Noise overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            NAVIGATION
            ═══════════════════════════════════════════════ */
-        #navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 16px 0;
-            background: rgba(10, 15, 30, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid transparent;
-            transition: background 0.4s, border-color 0.4s, padding 0.4s;
-        }
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(10, 15, 30, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: background 0.4s, border-color 0.4s, padding 0.4s;
+    }
 
-        #navbar.scrolled {
-            background: rgba(10, 15, 30, 0.92);
-            border-bottom-color: var(--border-color);
-            padding: 10px 0;
-        }
+    #navbar.scrolled {
+      background: rgba(10, 15, 30, 0.92);
+      border-bottom-color: var(--border-color);
+      padding: 10px 0;
+    }
 
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .nav-logo img {
-            height: 100px;
-            width: auto;
-        }
+    .nav-logo img {
+      height: 100px;
+      width: auto;
+    }
 
-        .nav-logo-text {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: #94A3B8;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    .nav-logo-text {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #94A3B8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            list-style: none;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
 
-        .nav-links a {
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            color: #94A3B8;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #94A3B8;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
 
-        .nav-cta-btn {
-            background: var(--accent-amber);
-            color: var(--bg-primary) !important;
-            padding: 10px 22px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.85rem !important;
-            transition: background 0.3s, transform 0.3s;
-        }
+    .nav-cta-btn {
+      background: var(--accent-amber);
+      color: var(--bg-primary) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      transition: background 0.3s, transform 0.3s;
+    }
 
-        .nav-cta-btn:hover {
-            background: #D97706;
-            transform: translateY(-1px);
-        }
+    .nav-cta-btn:hover {
+      background: #D97706;
+      transform: translateY(-1px);
+    }
 
-        /* Mobile hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            padding: 4px;
-        }
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      padding: 4px;
+    }
 
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: transform 0.3s, opacity 0.3s;
-        }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: transform 0.3s, opacity 0.3s;
+    }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
 
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 15, 30, 0.97);
-            backdrop-filter: blur(20px);
-            z-index: 999;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
-        }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 15, 30, 0.97);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
 
-        .mobile-menu.open {
-            display: flex;
-        }
+    .mobile-menu.open {
+      display: flex;
+    }
 
-        .mobile-menu a {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            letter-spacing: 3px;
-            color: var(--text-primary);
-            transition: color 0.3s;
-        }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 3px;
+      color: var(--text-primary);
+      transition: color 0.3s;
+    }
 
-        .mobile-menu a:hover {
-            color: var(--accent-amber);
-        }
+    .mobile-menu a:hover {
+      color: var(--accent-amber);
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            HERO SECTION
            ═══════════════════════════════════════════════ */
-        #hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            background: var(--bg-primary);
-        }
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--bg-primary);
+    }
 
-        /* Background image */
-        .hero-bg-image {
-            position: absolute;
-            inset: 0;
-            background: url('assets/image 1.jpeg') center center / cover no-repeat;
-            opacity: 0.15;
-            filter: saturate(0.6);
-        }
+    /* Background image */
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      background: url('assets/image 1.jpeg') center center / cover no-repeat;
+      opacity: 0.15;
+      filter: saturate(0.6);
+    }
 
-        /* Animated grid */
-        .hero-grid {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
-            background-size: 60px 60px;
-            animation: gridShift 20s linear infinite;
-        }
+    /* Animated grid */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridShift 20s linear infinite;
+    }
 
-        @keyframes gridShift {
-            0% {
-                background-position: 0 0;
-            }
+    @keyframes gridShift {
+      0% {
+        background-position: 0 0;
+      }
 
-            100% {
-                background-position: 60px 60px;
-            }
-        }
+      100% {
+        background-position: 60px 60px;
+      }
+    }
 
-        /* Glowing orbs */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            pointer-events: none;
-        }
+    /* Glowing orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+    }
 
-        .orb-amber {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.25), transparent 70%);
-            top: 10%;
-            right: -5%;
-            animation: floatOrb 8s ease-in-out infinite;
-        }
+    .orb-amber {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.25), transparent 70%);
+      top: 10%;
+      right: -5%;
+      animation: floatOrb 8s ease-in-out infinite;
+    }
 
-        .orb-teal {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(13, 148, 136, 0.2), transparent 70%);
-            bottom: 10%;
-            left: -5%;
-            animation: floatOrb 10s ease-in-out infinite reverse;
-        }
+    .orb-teal {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.2), transparent 70%);
+      bottom: 10%;
+      left: -5%;
+      animation: floatOrb 10s ease-in-out infinite reverse;
+    }
 
-        @keyframes floatOrb {
+    @keyframes floatOrb {
 
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
 
-            33% {
-                transform: translate(30px, -20px) scale(1.05);
-            }
+      33% {
+        transform: translate(30px, -20px) scale(1.05);
+      }
 
-            66% {
-                transform: translate(-20px, 15px) scale(0.95);
-            }
-        }
+      66% {
+        transform: translate(-20px, 15px) scale(0.95);
+      }
+    }
 
-        /* Dark gradient overlay at bottom */
-        .hero-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(to top, var(--bg-primary), transparent);
-            pointer-events: none;
-        }
+    /* Dark gradient overlay at bottom */
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to top, var(--bg-primary), transparent);
+      pointer-events: none;
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding-top: 120px;
-            padding-bottom: 80px;
-            width: 100%;
-        }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 120px;
+      padding-bottom: 80px;
+      width: 100%;
+    }
 
-        .hero-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 40px;
-        }
+    .hero-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
 
-        .hero-left {
-            flex: 1;
-        }
+    .hero-left {
+      flex: 1;
+    }
 
-        .hero-eyebrow {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--accent-amber);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            opacity: 0;
-            animation: fadeUp 0.8s 0.2s forwards;
-        }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-amber);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
 
-        .hero-headline {
-            font-family: var(--font-display);
-            font-size: clamp(5rem, 12vw, 11rem);
-            line-height: 0.9;
-            letter-spacing: 4px;
-            margin-bottom: 28px;
-            opacity: 0;
-            animation: fadeUp 0.8s 0.4s forwards;
-        }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(5rem, 12vw, 11rem);
+      line-height: 0.9;
+      letter-spacing: 4px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
 
-        .hero-headline .amber {
-            color: var(--accent-amber);
-        }
+    .hero-headline .amber {
+      color: var(--accent-amber);
+    }
 
-        .hero-headline .ghost {
-            color: transparent;
-            -webkit-text-stroke: 2px var(--text-primary);
-        }
+    .hero-headline .ghost {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--text-primary);
+    }
 
-        .hero-sub {
-            font-size: 1rem;
-            color: var(--text-muted);
-            max-width: 480px;
-            line-height: 1.8;
-            margin-bottom: 36px;
-            opacity: 0;
-            animation: fadeUp 0.8s 0.6s forwards;
-        }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
 
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 0;
-            opacity: 0;
-            animation: fadeUp 0.8s 0.8s forwards;
-        }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 0;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
 
-        .btn-primary {
-            background: var(--accent-amber);
-            color: var(--bg-primary);
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .btn-primary {
+      background: var(--accent-amber);
+      color: var(--bg-primary);
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .btn-primary:hover {
-            background: #D97706;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3);
-        }
+    .btn-primary:hover {
+      background: #D97706;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3);
+    }
 
-        .btn-ghost {
-            background: transparent;
-            color: var(--text-primary);
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border: 1px solid rgba(241, 245, 249, 0.2);
-            transition: border-color 0.3s, background 0.3s, transform 0.3s;
-        }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 1px solid rgba(241, 245, 249, 0.2);
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+    }
 
-        .btn-ghost:hover {
-            border-color: var(--accent-amber);
-            background: rgba(245, 158, 11, 0.05);
-            transform: translateY(-2px);
-        }
+    .btn-ghost:hover {
+      border-color: var(--accent-amber);
+      background: rgba(245, 158, 11, 0.05);
+      transform: translateY(-2px);
+    }
 
-        /* Hero stats */
-        .hero-stats {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            padding-bottom: 20px;
-            opacity: 0;
-            animation: fadeUp 0.8s 1s forwards;
-        }
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
 
-        .hero-stat {
-            text-align: right;
-        }
+    .hero-stat {
+      text-align: right;
+    }
 
-        .hero-stat-number {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            line-height: 1;
-            color: var(--text-primary);
-        }
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--text-primary);
+    }
 
-        .hero-stat-unit {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    .hero-stat-unit {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            opacity: 0;
-            animation: fadeUp 0.8s 1.2s forwards;
-        }
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.2s forwards;
+    }
 
-        .scroll-indicator span {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
+    .scroll-indicator span {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
 
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--accent-amber), transparent);
-            animation: scrollPulse 2s ease-in-out infinite;
-        }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent-amber), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
 
-        @keyframes scrollPulse {
+    @keyframes scrollPulse {
 
-            0%,
-            100% {
-                opacity: 0.3;
-                transform: scaleY(0.7);
-            }
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scaleY(0.7);
+      }
 
-            50% {
-                opacity: 1;
-                transform: scaleY(1);
-            }
-        }
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            SECTION 2 — THE PROBLEM
            ═══════════════════════════════════════════════ */
-        #problem {
-            background: var(--bg-secondary);
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
+    #problem {
+      background: var(--bg-secondary);
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .problem-bg {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: url('assets/image 4.jpeg') center center / cover no-repeat;
-            opacity: 0.06;
-            mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
-            -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
-        }
+    .problem-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('assets/image 4.jpeg') center center / cover no-repeat;
+      opacity: 0.06;
+      mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+      -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+    }
 
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            position: relative;
-            z-index: 1;
-        }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .problem-text p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 24px;
-            line-height: 1.8;
-        }
+    .problem-text p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
 
-        .callout-box {
-            border-left: 3px solid var(--accent-amber);
-            padding: 24px 28px;
-            background: var(--accent-amber-dim);
-            border-radius: 0 8px 8px 0;
-            margin-top: 32px;
-        }
+    .callout-box {
+      border-left: 3px solid var(--accent-amber);
+      padding: 24px 28px;
+      background: var(--accent-amber-dim);
+      border-radius: 0 8px 8px 0;
+      margin-top: 32px;
+    }
 
-        .callout-box p {
-            color: var(--text-primary) !important;
-            font-style: italic;
-            font-size: 0.95rem !important;
-            line-height: 1.8;
-        }
+    .callout-box p {
+      color: var(--text-primary) !important;
+      font-style: italic;
+      font-size: 0.95rem !important;
+      line-height: 1.8;
+    }
 
-        .data-cards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+    .data-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
 
-        .data-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 28px 24px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
-        }
+    .data-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    }
 
-        .data-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--accent-amber);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s;
-        }
+    .data-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent-amber);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
 
-        .data-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(245, 158, 11, 0.2);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-        }
+    .data-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245, 158, 11, 0.2);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
 
-        .data-card:hover::before {
-            transform: scaleX(1);
-        }
+    .data-card:hover::before {
+      transform: scaleX(1);
+    }
 
-        .data-card-number {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            line-height: 1;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
+    .data-card-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
 
-        .data-card-text {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            line-height: 1.5;
-        }
+    .data-card-text {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            SECTION 3 — THE SOLUTION
            ═══════════════════════════════════════════════ */
-        #solution {
-            background: var(--bg-primary);
-            padding: 120px 0;
-            position: relative;
-        }
+    #solution {
+      background: var(--bg-primary);
+      padding: 120px 0;
+      position: relative;
+    }
 
-        .solution-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
 
-        .solution-text p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
+    .solution-text p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
 
-        .solution-text p strong {
-            color: var(--text-primary);
-        }
+    .solution-text p strong {
+      color: var(--text-primary);
+    }
 
-        .haas-badge {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            border: 2px solid var(--accent-amber);
-            border-radius: 12px;
-            padding: 20px 28px;
-            margin-top: 24px;
-            background: var(--accent-amber-dim);
-        }
+    .haas-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 2px solid var(--accent-amber);
+      border-radius: 12px;
+      padding: 20px 28px;
+      margin-top: 24px;
+      background: var(--accent-amber-dim);
+    }
 
-        .haas-badge-title {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            letter-spacing: 4px;
-            color: var(--accent-amber);
-        }
+    .haas-badge-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 4px;
+      color: var(--accent-amber);
+    }
 
-        .haas-badge-sub {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
+    .haas-badge-sub {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
 
-        /* Solution image */
-        .solution-image-wrap {
-            margin-bottom: 32px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
+    /* Solution image */
+    .solution-image-wrap {
+      margin-bottom: 32px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
 
-        .solution-image-wrap img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.6s;
-        }
+    .solution-image-wrap img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
 
-        .solution-image-wrap:hover img {
-            transform: scale(1.03);
-        }
+    .solution-image-wrap:hover img {
+      transform: scale(1.03);
+    }
 
-        /* System flow */
-        .system-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            position: relative;
-        }
+    /* System flow */
+    .system-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
 
-        .flow-step {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            position: relative;
-            transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
-        }
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+      transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    }
 
-        .flow-step:hover {
-            transform: translateX(8px);
-            border-color: rgba(245, 158, 11, 0.3);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
+    .flow-step:hover {
+      transform: translateX(8px);
+      border-color: rgba(245, 158, 11, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
 
-        .flow-connector {
-            width: 2px;
-            height: 28px;
-            background: linear-gradient(to bottom, var(--accent-amber), rgba(245, 158, 11, 0.2));
-            margin-left: 36px;
-        }
+    .flow-connector {
+      width: 2px;
+      height: 28px;
+      background: linear-gradient(to bottom, var(--accent-amber), rgba(245, 158, 11, 0.2));
+      margin-left: 36px;
+    }
 
-        .flow-step-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
+    .flow-step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
 
-        .flow-step-icon {
-            font-size: 1.4rem;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent-amber-dim);
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
+    .flow-step-icon {
+      font-size: 1.4rem;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-amber-dim);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
 
-        .flow-step-name {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            letter-spacing: 3px;
-        }
+    .flow-step-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+    }
 
-        .flow-step-desc {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            padding-left: 52px;
-        }
+    .flow-step-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      padding-left: 52px;
+    }
 
-        .flow-step-specs {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--accent-amber);
-            padding-left: 52px;
-            letter-spacing: 0.5px;
-        }
+    .flow-step-specs {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-amber);
+      padding-left: 52px;
+      letter-spacing: 0.5px;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            SECTION 4 — HOW IT WORKS (PHASES)
            ═══════════════════════════════════════════════ */
-        #phases {
-            background: var(--bg-secondary);
-            padding: 120px 0;
-        }
+    #phases {
+      background: var(--bg-secondary);
+      padding: 120px 0;
+    }
 
-        .phases-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
+    .phases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
 
-        .phase-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px 32px;
-            position: relative;
-            overflow: hidden;
-            transition: border-color 0.4s, box-shadow 0.4s;
-        }
+    .phase-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s, box-shadow 0.4s;
+    }
 
-        .phase-card:hover {
-            border-color: rgba(245, 158, 11, 0.2);
-            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.3);
-        }
+    .phase-card:hover {
+      border-color: rgba(245, 158, 11, 0.2);
+      box-shadow: 0 12px 50px rgba(0, 0, 0, 0.3);
+    }
 
-        .phase-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-amber), var(--accent-teal));
-        }
+    .phase-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-amber), var(--accent-teal));
+    }
 
-        .phase-tag {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--accent-amber);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: var(--accent-amber-dim);
-            padding: 6px 14px;
-            border-radius: 100px;
-            margin-bottom: 20px;
-        }
+    .phase-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-amber);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--accent-amber-dim);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
 
-        .phase-title {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            letter-spacing: 3px;
-            margin-bottom: 16px;
-        }
+    .phase-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
 
-        .phase-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 28px;
-            line-height: 1.7;
-        }
+    .phase-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
 
-        .phase-track {
-            background: rgba(10, 15, 30, 0.5);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 18px 20px;
-            margin-bottom: 14px;
-        }
+    .phase-track {
+      background: rgba(10, 15, 30, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
 
-        .phase-track-title {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            color: var(--accent-amber);
-            margin-bottom: 6px;
-        }
+    .phase-track-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      color: var(--accent-amber);
+      margin-bottom: 6px;
+    }
 
-        .phase-track-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
+    .phase-track-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
-        .phase-metrics {
-            display: flex;
-            gap: 16px;
-            margin-top: 24px;
-            flex-wrap: wrap;
-        }
+    .phase-metrics {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
 
-        .phase-metric {
-            background: rgba(10, 15, 30, 0.6);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 10px 16px;
-            text-align: center;
-            flex: 1;
-            min-width: 100px;
-        }
+    .phase-metric {
+      background: rgba(10, 15, 30, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 16px;
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
 
-        .phase-metric-val {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            color: var(--text-primary);
-        }
+    .phase-metric-val {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+    }
 
-        .phase-metric-label {
-            font-family: var(--font-mono);
-            font-size: 0.6rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .phase-metric-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            SECTION 5 — IMPACT
            ═══════════════════════════════════════════════ */
-        #impact {
-            background: var(--bg-primary);
-            padding: 120px 0;
-        }
+    #impact {
+      background: var(--bg-primary);
+      padding: 120px 0;
+    }
 
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 48px;
-        }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
 
-        .impact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 36px 28px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
-        }
+    .impact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    }
 
-        .impact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent-teal);
-            border-radius: 4px 0 0 4px;
-        }
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-teal);
+      border-radius: 4px 0 0 4px;
+    }
 
-        .impact-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(13, 148, 136, 0.3);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-        }
+    .impact-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(13, 148, 136, 0.3);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
 
-        .impact-card-level {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--accent-teal);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
+    .impact-card-level {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-teal);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
 
-        .impact-card ul {
-            list-style: none;
-        }
+    .impact-card ul {
+      list-style: none;
+    }
 
-        .impact-card li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 14px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
+    .impact-card li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
 
-        .impact-card li::before {
-            content: '↓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-teal);
-            font-weight: 700;
-        }
+    .impact-card li::before {
+      content: '↓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-teal);
+      font-weight: 700;
+    }
 
-        .sdg-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
+    .sdg-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
 
-        .sdg-pill {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            padding: 10px 20px;
-            transition: border-color 0.3s, background 0.3s, transform 0.3s;
-            cursor: default;
-        }
+    .sdg-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 100px;
+      padding: 10px 20px;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      cursor: default;
+    }
 
-        .sdg-pill:hover {
-            border-color: var(--accent-teal);
-            background: var(--accent-teal-dim);
-            transform: translateY(-3px);
-        }
+    .sdg-pill:hover {
+      border-color: var(--accent-teal);
+      background: var(--accent-teal-dim);
+      transform: translateY(-3px);
+    }
 
-        .sdg-pill-number {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            color: var(--accent-teal);
-        }
+    .sdg-pill-number {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--accent-teal);
+    }
 
-        .sdg-pill-name {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
+    .sdg-pill-name {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            SECTION 6 — FINANCIALS
            ═══════════════════════════════════════════════ */
-        #financials {
-            background: var(--bg-secondary);
-            padding: 120px 0;
-        }
+    #financials {
+      background: var(--bg-secondary);
+      padding: 120px 0;
+    }
 
-        .financials-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-bottom: 48px;
-        }
+    .financials-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
 
-        .financial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 36px 24px;
-            text-align: center;
-            transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
-        }
+    .financial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 36px 24px;
+      text-align: center;
+      transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    }
 
-        .financial-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(245, 158, 11, 0.2);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-        }
+    .financial-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245, 158, 11, 0.2);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
 
-        .financial-number {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            line-height: 1;
-            margin-bottom: 4px;
-            color: var(--accent-amber);
-        }
+    .financial-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 4px;
+      color: var(--accent-amber);
+    }
 
-        .financial-unit {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--text-primary);
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
+    .financial-unit {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
 
-        .financial-desc {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
+    .financial-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
 
-        .progress-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-        }
+    .progress-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px;
+    }
 
-        .progress-label {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-        }
+    .progress-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
 
-        .progress-bar-track {
-            width: 100%;
-            height: 12px;
-            background: rgba(241, 245, 249, 0.05);
-            border-radius: 100px;
-            overflow: hidden;
-            margin-bottom: 16px;
-        }
+    .progress-bar-track {
+      width: 100%;
+      height: 12px;
+      background: rgba(241, 245, 249, 0.05);
+      border-radius: 100px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
 
-        .progress-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--accent-amber), var(--accent-teal));
-            border-radius: 100px;
-            transition: width 2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-amber), var(--accent-teal));
+      border-radius: 100px;
+      transition: width 2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-        .progress-bar-fill.animated {
-            width: 60%;
-        }
+    .progress-bar-fill.animated {
+      width: 60%;
+    }
 
-        .progress-note {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
+    .progress-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            SECTION 7 — HERITAGE QUOTE
            ═══════════════════════════════════════════════ */
-        #heritage {
-            position: relative;
-            padding: 140px 0;
-            background: var(--bg-primary);
-            overflow: hidden;
-            text-align: center;
-        }
+    #heritage {
+      position: relative;
+      padding: 140px 0;
+      background: var(--bg-primary);
+      overflow: hidden;
+      text-align: center;
+    }
 
-        .heritage-bg {
-            position: absolute;
-            inset: 0;
-            background: url('assets/image 5.jpeg') center center / cover no-repeat;
-            opacity: 0.12;
-            filter: saturate(0.5);
-        }
+    .heritage-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/image 5.jpeg') center center / cover no-repeat;
+      opacity: 0.12;
+      filter: saturate(0.5);
+    }
 
-        .heritage-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom,
-                    var(--bg-primary),
-                    rgba(10, 15, 30, 0.5) 30%,
-                    rgba(10, 15, 30, 0.5) 70%,
-                    var(--bg-primary));
-        }
+    .heritage-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          var(--bg-primary),
+          rgba(10, 15, 30, 0.5) 30%,
+          rgba(10, 15, 30, 0.5) 70%,
+          var(--bg-primary));
+    }
 
-        .heritage-content {
-            position: relative;
-            z-index: 1;
-        }
+    .heritage-content {
+      position: relative;
+      z-index: 1;
+    }
 
-        .heritage-quote {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            font-style: italic;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: var(--text-primary);
-        }
+    .heritage-quote {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: var(--text-primary);
+    }
 
-        .heritage-quote .amber {
-            color: var(--accent-amber);
-            font-style: normal;
-            font-weight: 700;
-        }
+    .heritage-quote .amber {
+      color: var(--accent-amber);
+      font-style: normal;
+      font-weight: 700;
+    }
 
-        .heritage-vision {
-            font-size: 1rem;
-            color: var(--text-muted);
-            max-width: 520px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
+    .heritage-vision {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            SECTION 8 — CTA
            ═══════════════════════════════════════════════ */
-        #cta {
-            background: var(--bg-secondary);
-            padding: 120px 0;
-            text-align: center;
-        }
+    #cta {
+      background: var(--bg-secondary);
+      padding: 120px 0;
+      text-align: center;
+    }
 
-        .cta-label {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--accent-teal);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
+    .cta-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-teal);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
 
-        .cta-headline {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            line-height: 1;
-            letter-spacing: 3px;
-            margin-bottom: 24px;
-        }
+    .cta-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+    }
 
-        .cta-headline .amber {
-            color: var(--accent-amber);
-        }
+    .cta-headline .amber {
+      color: var(--accent-amber);
+    }
 
-        .cta-sub {
-            font-size: 1rem;
-            color: var(--text-muted);
-            max-width: 520px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-        }
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
 
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-bottom: 48px;
-        }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
 
-        .cta-form {
-            display: flex;
-            max-width: 440px;
-            margin: 0 auto;
-            gap: 0;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
+    .cta-form {
+      display: flex;
+      max-width: 440px;
+      margin: 0 auto;
+      gap: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
 
-        .cta-form input[type="email"] {
-            flex: 1;
-            padding: 14px 20px;
-            background: var(--bg-card);
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            border: none;
-        }
+    .cta-form input[type="email"] {
+      flex: 1;
+      padding: 14px 20px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      border: none;
+    }
 
-        .cta-form input[type="email"]::placeholder {
-            color: var(--text-muted);
-        }
+    .cta-form input[type="email"]::placeholder {
+      color: var(--text-muted);
+    }
 
-        .cta-form button {
-            padding: 14px 24px;
-            background: var(--accent-amber);
-            color: var(--bg-primary);
-            font-weight: 700;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background 0.3s;
-            white-space: nowrap;
-        }
+    .cta-form button {
+      padding: 14px 24px;
+      background: var(--accent-amber);
+      color: var(--bg-primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      white-space: nowrap;
+    }
 
-        .cta-form button:hover {
-            background: #D97706;
-        }
+    .cta-form button:hover {
+      background: #D97706;
+    }
 
-        .cta-contact-info {
-            margin-top: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
-            justify-content: center;
-        }
+    .cta-contact-info {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
 
-        .cta-contact-item {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
+    .cta-contact-item {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
 
-        .cta-contact-item a {
-            color: var(--accent-amber);
-            transition: opacity 0.3s;
-        }
+    .cta-contact-item a {
+      color: var(--accent-amber);
+      transition: opacity 0.3s;
+    }
 
-        .cta-contact-item a:hover {
-            opacity: 0.8;
-        }
+    .cta-contact-item a:hover {
+      opacity: 0.8;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            FOOTER
            ═══════════════════════════════════════════════ */
-        #footer {
-            background: rgba(5, 8, 15, 0.8);
-            border-top: 1px solid var(--border-color);
-            padding: 32px 0;
-        }
+    #footer {
+      background: rgba(5, 8, 15, 0.8);
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0;
+    }
 
-        .footer-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .footer-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-        .footer-left img {
-            height: 28px;
-            width: auto;
-        }
+    .footer-left img {
+      height: 28px;
+      width: auto;
+    }
 
-        .footer-tagline {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    .footer-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        .footer-right {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
+    .footer-right {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            RESPONSIVE — TABLET (max-width: 1024px)
            ═══════════════════════════════════════════════ */
-        @media (max-width: 1024px) {
-            .nav-logo img {
-                height: 70px;
-            }
+    @media (max-width: 1024px) {
+      .nav-logo img {
+        height: 70px;
+      }
 
-            .nav-links {
-                gap: 20px;
-            }
+      .nav-links {
+        gap: 20px;
+      }
 
-            .nav-links a {
-                font-size: 0.75rem;
-            }
+      .nav-links a {
+        font-size: 0.75rem;
+      }
 
-            .nav-cta-btn {
-                font-size: 0.75rem !important;
-                padding: 8px 16px;
-            }
+      .nav-cta-btn {
+        font-size: 0.75rem !important;
+        padding: 8px 16px;
+      }
 
-            #problem,
-            #solution,
-            #phases,
-            #impact,
-            #financials,
-            #cta {
-                padding: 90px 0;
-            }
+      #problem,
+      #solution,
+      #phases,
+      #impact,
+      #financials,
+      #cta {
+        padding: 90px 0;
+      }
 
-            #heritage {
-                padding: 100px 0;
-            }
+      #heritage {
+        padding: 100px 0;
+      }
 
-            .problem-grid,
-            .solution-grid {
-                gap: 40px;
-            }
+      .problem-grid,
+      .solution-grid {
+        gap: 40px;
+      }
 
-            .financials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+      .financials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-            .phase-card {
-                padding: 32px 24px;
-            }
-        }
+      .phase-card {
+        padding: 32px 24px;
+      }
+    }
 
-        /* ═══════════════════════════════════════════════
+    /* ═══════════════════════════════════════════════
            RESPONSIVE — MOBILE (max-width: 768px)
            ═══════════════════════════════════════════════ */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-
-            /* Nav */
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-logo img {
-                height: 50px;
-            }
-
-            .nav-logo-text {
-                font-size: 0.65rem;
-            }
-
-            #navbar {
-                padding: 10px 0;
-            }
-
-            /* Hero */
-            .hero-content {
-                padding-top: 100px;
-                padding-bottom: 60px;
-            }
-
-            .hero-inner {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 32px;
-            }
-
-            .hero-headline {
-                font-size: clamp(3.2rem, 14vw, 5.5rem);
-            }
-
-            .hero-headline .ghost {
-                -webkit-text-stroke: 1.5px var(--text-primary);
-            }
-
-            .hero-sub {
-                font-size: 0.9rem;
-                max-width: 100%;
-                margin-bottom: 28px;
-            }
-
-            .hero-eyebrow {
-                font-size: 0.65rem;
-                letter-spacing: 3px;
-            }
-
-            .hero-stats {
-                flex-direction: row;
-                gap: 24px;
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .hero-stat {
-                text-align: center;
-            }
-
-            .hero-stat-number {
-                font-size: 2.5rem;
-            }
-
-            .hero-stat-unit {
-                font-size: 0.6rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-                gap: 12px;
-            }
-
-            .btn-primary,
-            .btn-ghost {
-                width: 100%;
-                text-align: center;
-                justify-content: center;
-                padding: 14px 24px;
-            }
-
-            .scroll-indicator {
-                bottom: 16px;
-            }
-
-            /* Sections */
-            #problem,
-            #solution,
-            #phases,
-            #impact,
-            #financials,
-            #cta {
-                padding: 72px 0;
-            }
-
-            #heritage {
-                padding: 80px 0;
-            }
-
-            .section-title {
-                font-size: clamp(2rem, 7vw, 3rem);
-                margin-bottom: 28px;
-            }
-
-            .section-label {
-                font-size: 0.7rem;
-                margin-bottom: 12px;
-            }
-
-            /* Problem */
-            .problem-grid {
-                grid-template-columns: 1fr;
-                gap: 36px;
-            }
-
-            .callout-box {
-                padding: 18px 20px;
-            }
-
-            .data-cards-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 14px;
-            }
-
-            .data-card {
-                padding: 20px 18px;
-            }
-
-            .data-card-number {
-                font-size: 2.2rem;
-            }
-
-            .data-card-text {
-                font-size: 0.68rem;
-            }
-
-            /* Solution */
-            .solution-grid {
-                grid-template-columns: 1fr;
-                gap: 36px;
-            }
-
-            .solution-image-wrap img {
-                height: 180px;
-            }
-
-            .flow-step {
-                padding: 18px 16px;
-            }
-
-            .flow-step-desc,
-            .flow-step-specs {
-                padding-left: 42px;
-            }
-
-            .flow-step-icon {
-                width: 32px;
-                height: 32px;
-                font-size: 1.1rem;
-            }
-
-            .flow-step-name {
-                font-size: 1.1rem;
-            }
-
-            .flow-connector {
-                height: 20px;
-                margin-left: 28px;
-            }
-
-            /* Phases */
-            .phases-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .phase-card {
-                padding: 28px 20px;
-            }
-
-            .phase-title {
-                font-size: 1.8rem;
-            }
-
-            .phase-track {
-                padding: 14px 16px;
-            }
-
-            .phase-metrics {
-                gap: 10px;
-            }
-
-            .phase-metric {
-                padding: 8px 10px;
-                min-width: 80px;
-            }
-
-            /* Impact */
-            .impact-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .impact-card {
-                padding: 28px 22px;
-            }
-
-            .sdg-pills {
-                gap: 8px;
-            }
-
-            .sdg-pill {
-                padding: 8px 14px;
-            }
-
-            .sdg-pill-name {
-                font-size: 0.58rem;
-            }
-
-            /* Financials */
-            .financials-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 14px;
-            }
-
-            .financial-card {
-                padding: 24px 16px;
-            }
-
-            .financial-number {
-                font-size: 2.5rem;
-            }
-
-            .financial-unit {
-                font-size: 0.7rem;
-            }
-
-            .financial-desc {
-                font-size: 0.72rem;
-            }
-
-            .progress-container {
-                padding: 24px 20px;
-            }
-
-            /* Heritage */
-            .heritage-quote {
-                font-size: clamp(1.1rem, 4vw, 1.5rem);
-            }
-
-            .heritage-vision {
-                font-size: 0.9rem;
-            }
-
-            /* CTA */
-            .cta-headline {
-                font-size: clamp(2rem, 8vw, 3.5rem);
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-            }
-
-            .cta-buttons .btn-primary,
-            .cta-buttons .btn-ghost {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .cta-form {
-                max-width: 100%;
-            }
-
-            .cta-contact-info {
-                gap: 20px;
-            }
-
-            /* Footer */
-            .footer-inner {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-
-            .footer-left {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            /* Mobile menu */
-            .mobile-menu a {
-                font-size: 1.6rem;
-            }
-
-            /* Orbs smaller on mobile */
-            .orb-amber {
-                width: 300px;
-                height: 300px;
-            }
-
-            .orb-teal {
-                width: 200px;
-                height: 200px;
-            }
-        }
-
-        /* ═══════════════════════════════════════════════
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      /* Nav */
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-logo img {
+        height: 50px;
+      }
+
+      .nav-logo-text {
+        font-size: 0.65rem;
+      }
+
+      #navbar {
+        padding: 10px 0;
+      }
+
+      /* Hero */
+      .hero-content {
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+
+      .hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+      }
+
+      .hero-headline {
+        font-size: clamp(3.2rem, 14vw, 5.5rem);
+      }
+
+      .hero-headline .ghost {
+        -webkit-text-stroke: 1.5px var(--text-primary);
+      }
+
+      .hero-sub {
+        font-size: 0.9rem;
+        max-width: 100%;
+        margin-bottom: 28px;
+      }
+
+      .hero-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+      }
+
+      .hero-stats {
+        flex-direction: row;
+        gap: 24px;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .hero-stat {
+        text-align: center;
+      }
+
+      .hero-stat-number {
+        font-size: 2.5rem;
+      }
+
+      .hero-stat-unit {
+        font-size: 0.6rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 14px 24px;
+      }
+
+      .scroll-indicator {
+        bottom: 16px;
+      }
+
+      /* Sections */
+      #problem,
+      #solution,
+      #phases,
+      #impact,
+      #financials,
+      #cta {
+        padding: 72px 0;
+      }
+
+      #heritage {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 7vw, 3rem);
+        margin-bottom: 28px;
+      }
+
+      .section-label {
+        font-size: 0.7rem;
+        margin-bottom: 12px;
+      }
+
+      /* Problem */
+      .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .callout-box {
+        padding: 18px 20px;
+      }
+
+      .data-cards-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .data-card {
+        padding: 20px 18px;
+      }
+
+      .data-card-number {
+        font-size: 2.2rem;
+      }
+
+      .data-card-text {
+        font-size: 0.68rem;
+      }
+
+      /* Solution */
+      .solution-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .solution-image-wrap img {
+        height: 180px;
+      }
+
+      .flow-step {
+        padding: 18px 16px;
+      }
+
+      .flow-step-desc,
+      .flow-step-specs {
+        padding-left: 42px;
+      }
+
+      .flow-step-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+      }
+
+      .flow-step-name {
+        font-size: 1.1rem;
+      }
+
+      .flow-connector {
+        height: 20px;
+        margin-left: 28px;
+      }
+
+      /* Phases */
+      .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .phase-card {
+        padding: 28px 20px;
+      }
+
+      .phase-title {
+        font-size: 1.8rem;
+      }
+
+      .phase-track {
+        padding: 14px 16px;
+      }
+
+      .phase-metrics {
+        gap: 10px;
+      }
+
+      .phase-metric {
+        padding: 8px 10px;
+        min-width: 80px;
+      }
+
+      /* Impact */
+      .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .impact-card {
+        padding: 28px 22px;
+      }
+
+      .sdg-pills {
+        gap: 8px;
+      }
+
+      .sdg-pill {
+        padding: 8px 14px;
+      }
+
+      .sdg-pill-name {
+        font-size: 0.58rem;
+      }
+
+      /* Financials */
+      .financials-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .financial-card {
+        padding: 24px 16px;
+      }
+
+      .financial-number {
+        font-size: 2.5rem;
+      }
+
+      .financial-unit {
+        font-size: 0.7rem;
+      }
+
+      .financial-desc {
+        font-size: 0.72rem;
+      }
+
+      .progress-container {
+        padding: 24px 20px;
+      }
+
+      /* Heritage */
+      .heritage-quote {
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+      }
+
+      .heritage-vision {
+        font-size: 0.9rem;
+      }
+
+      /* CTA */
+      .cta-headline {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .cta-buttons .btn-primary,
+      .cta-buttons .btn-ghost {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .cta-form {
+        max-width: 100%;
+      }
+
+      .cta-contact-info {
+        gap: 20px;
+      }
+
+      /* Footer */
+      .footer-inner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .footer-left {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      /* Mobile menu */
+      .mobile-menu a {
+        font-size: 1.6rem;
+      }
+
+      /* Orbs smaller on mobile */
+      .orb-amber {
+        width: 300px;
+        height: 300px;
+      }
+
+      .orb-teal {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════
            RESPONSIVE — SMALL MOBILE (max-width: 480px)
            ═══════════════════════════════════════════════ */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
 
-            .nav-logo img {
-                height: 40px;
-            }
+      .nav-logo img {
+        height: 40px;
+      }
 
-            .nav-logo-text {
-                display: none;
-            }
+      .nav-logo-text {
+        display: none;
+      }
 
-            .hero-headline {
-                font-size: clamp(2.8rem, 16vw, 4.5rem);
-            }
+      .hero-headline {
+        font-size: clamp(2.8rem, 16vw, 4.5rem);
+      }
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-            }
+      .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
 
-            .hero-stat {
-                text-align: left;
-                display: flex;
-                align-items: baseline;
-                gap: 10px;
-            }
+      .hero-stat {
+        text-align: left;
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
 
-            .hero-stat-number {
-                font-size: 2.2rem;
-            }
+      .hero-stat-number {
+        font-size: 2.2rem;
+      }
 
-            .data-cards-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
+      .data-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
 
-            .data-card-number {
-                font-size: 2rem;
-            }
+      .data-card-number {
+        font-size: 2rem;
+      }
 
-            .financials-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
+      .financials-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
 
-            .financial-number {
-                font-size: 2.2rem;
-            }
+      .financial-number {
+        font-size: 2.2rem;
+      }
 
-            .sdg-pills {
-                flex-direction: column;
-                align-items: stretch;
-            }
+      .sdg-pills {
+        flex-direction: column;
+        align-items: stretch;
+      }
 
-            .sdg-pill {
-                justify-content: center;
-            }
+      .sdg-pill {
+        justify-content: center;
+      }
 
-            .cta-form {
-                flex-direction: column;
-            }
+      .cta-form {
+        flex-direction: column;
+      }
 
-            .cta-form button {
-                padding: 14px;
-            }
+      .cta-form button {
+        padding: 14px;
+      }
 
-            .phase-metrics {
-                flex-direction: column;
-            }
+      .phase-metrics {
+        flex-direction: column;
+      }
 
-            .phase-metric {
-                min-width: unset;
-            }
+      .phase-metric {
+        min-width: unset;
+      }
 
-            .flow-step-desc {
-                font-size: 0.8rem;
-            }
+      .flow-step-desc {
+        font-size: 0.8rem;
+      }
 
-            .flow-step-specs {
-                font-size: 0.62rem;
-            }
+      .flow-step-specs {
+        font-size: 0.62rem;
+      }
 
-            #problem,
-            #solution,
-            #phases,
-            #impact,
-            #financials,
-            #cta {
-                padding: 56px 0;
-            }
+      #problem,
+      #solution,
+      #phases,
+      #impact,
+      #financials,
+      #cta {
+        padding: 56px 0;
+      }
 
-            #heritage {
-                padding: 60px 0;
-            }
+      #heritage {
+        padding: 60px 0;
+      }
 
-            .section-title {
-                font-size: clamp(1.8rem, 8vw, 2.5rem);
-            }
+      .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+      }
 
-            .haas-badge {
-                padding: 16px 20px;
-            }
+      .haas-badge {
+        padding: 16px 20px;
+      }
 
-            .haas-badge-title {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+      .haas-badge-title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          NAVIGATION
          ═══════════════════════════════════════ -->
-    <nav id="navbar">
-        <div class="container nav-inner">
-            <a href="#hero" class="nav-logo">
-                <img src="assets/logo color.png" alt="ATON Logo">
-                <span class="nav-logo-text">Heat as a Service</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#problem">The Problem</a></li>
-                <li><a href="#solution">The Solution</a></li>
-                <li><a href="#phases">How It Works</a></li>
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#financials">Financials</a></li>
-                <li><a href="#cta" class="nav-cta-btn">Get In Touch</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger-btn" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="#problem" class="mobile-link">The Problem</a>
-        <a href="#solution" class="mobile-link">The Solution</a>
-        <a href="#phases" class="mobile-link">How It Works</a>
-        <a href="#impact" class="mobile-link">Impact</a>
-        <a href="#financials" class="mobile-link">Financials</a>
-        <a href="#cta" class="mobile-link" style="color: var(--accent-amber);">Get In Touch</a>
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/logo color.png" alt="ATON Logo">
+        <span class="nav-logo-text">Heat as a Service</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#solution">The Solution</a></li>
+        <li><a href="#phases">How It Works</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#financials">Financials</a></li>
+        <li><a href="#cta" class="nav-cta-btn">Get In Touch</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#problem" class="mobile-link">The Problem</a>
+    <a href="#solution" class="mobile-link">The Solution</a>
+    <a href="#phases" class="mobile-link">How It Works</a>
+    <a href="#impact" class="mobile-link">Impact</a>
+    <a href="#financials" class="mobile-link">Financials</a>
+    <a href="#cta" class="mobile-link" style="color: var(--accent-amber);">Get In Touch</a>
+  </div>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 1 — HERO
          ═══════════════════════════════════════ -->
-    <section id="hero">
-        <div class="hero-bg-image"></div>
-        <div class="hero-grid"></div>
-        <div class="orb orb-amber"></div>
-        <div class="orb orb-teal"></div>
-        <div class="hero-overlay"></div>
+  <section id="hero">
+    <div class="hero-bg-image"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-amber"></div>
+    <div class="orb orb-teal"></div>
+    <div class="hero-overlay"></div>
 
-        <div class="hero-content container">
-            <div class="hero-inner">
-                <div class="hero-left">
-                    <p class="hero-eyebrow">Sadat City, Egypt — Industrial Thermal Energy</p>
-                    <h1 class="hero-headline">
-                        HEAT<br>
-                        <span class="amber">AS A</span><br>
-                        <span class="ghost">SERVICE</span>
-                    </h1>
-                    <p class="hero-sub">We capture the sun's heat, store it in sand, and deliver it directly to Egyptian
-                        factories — replacing diesel and gas with a clean, fixed-cost subscription.</p>
-                    <div class="hero-buttons">
-                        <a href="#solution" class="btn-primary">See How It Works →</a>
-                        <a href="#cta" class="btn-ghost">Talk to Us</a>
-                    </div>
-                </div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">60%</div>
-                        <div class="hero-stat-unit">Energy cost reduction</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">756</div>
-                        <div class="hero-stat-unit">kWth per day</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-number">500°</div>
-                        <div class="hero-stat-unit">Storage temperature</div>
-                    </div>
-                </div>
-            </div>
+    <div class="hero-content container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="hero-eyebrow">Sadat City, Egypt — Industrial Thermal Energy</p>
+          <h1 class="hero-headline">
+            HEAT<br>
+            <span class="amber">AS A</span><br>
+            <span class="ghost">SERVICE</span>
+          </h1>
+          <p class="hero-sub">We capture the sun's heat, store it in sand, and deliver it directly to Egyptian
+            factories — replacing diesel and gas with a clean, fixed-cost subscription.</p>
+          <div class="hero-buttons">
+            <a href="#solution" class="btn-primary">See How It Works →</a>
+            <a href="#cta" class="btn-ghost">Talk to Us</a>
+          </div>
         </div>
-
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number">60%</div>
+            <div class="hero-stat-unit">Energy cost reduction</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">756</div>
+            <div class="hero-stat-unit">kWth per day</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">500°</div>
+            <div class="hero-stat-unit">Storage temperature</div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 2 — THE PROBLEM
          ═══════════════════════════════════════ -->
-    <section id="problem">
-        <div class="problem-bg"></div>
-        <div class="container">
-            <div class="section-label reveal">01 — The Problem</div>
-            <h2 class="section-title reveal">EGYPT'S INDUSTRY<br>RUNS ON HEAT.</h2>
+  <section id="problem">
+    <div class="problem-bg"></div>
+    <div class="container">
+      <div class="section-label reveal">01 — The Problem</div>
+      <h2 class="section-title reveal">EGYPT'S INDUSTRY<br>RUNS ON HEAT.</h2>
 
-            <div class="problem-grid">
-                <div class="problem-text reveal">
-                    <p>Every cement factory, every ceramics plant, every food processing line depends on
-                        high-temperature thermal energy to operate. And today, almost all of that heat comes from
-                        natural gas and diesel fuel.</p>
-                    <p>Since global fuel price shocks, factories absorb these costs with no hedge, no backup, and no
-                        alternative. Energy bills now represent up to 40% of total operating costs.</p>
+      <div class="problem-grid">
+        <div class="problem-text reveal">
+          <p>Every cement factory, every ceramics plant, every food processing line depends on
+            high-temperature thermal energy to operate. And today, almost all of that heat comes from
+            natural gas and diesel fuel.</p>
+          <p>Since global fuel price shocks, factories absorb these costs with no hedge, no backup, and no
+            alternative. Energy bills now represent up to 40% of total operating costs.</p>
 
-                    <div class="callout-box">
-                        <p>"Egypt receives some of the highest solar radiation on Earth — yet that energy falls on the
-                            same deserts where our industrial cities are built, and goes completely to waste. Every.
-                            Single. Day."</p>
-                    </div>
-                </div>
-
-                <div class="data-cards-grid reveal">
-                    <div class="data-card">
-                        <div class="data-card-number">40%</div>
-                        <div class="data-card-text">of Egypt's natural gas consumed by industry</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-card-number">40%</div>
-                        <div class="data-card-text">of factory operating costs are energy-related</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-card-number">+20%</div>
-                        <div class="data-card-text">electricity price rise in Egypt in 2025</div>
-                    </div>
-                    <div class="data-card">
-                        <div class="data-card-number">25%</div>
-                        <div class="data-card-text">of Egypt's CO₂ from industrial sector</div>
-                    </div>
-                </div>
-            </div>
+          <div class="callout-box">
+            <p>"Egypt receives some of the highest solar radiation on Earth — yet that energy falls on the
+              same deserts where our industrial cities are built, and goes completely to waste. Every.
+              Single. Day."</p>
+          </div>
         </div>
-    </section>
+
+        <div class="data-cards-grid reveal">
+          <div class="data-card">
+            <div class="data-card-number">40%</div>
+            <div class="data-card-text">of Egypt's natural gas consumed by industry</div>
+          </div>
+          <div class="data-card">
+            <div class="data-card-number">40%</div>
+            <div class="data-card-text">of factory operating costs are energy-related</div>
+          </div>
+          <div class="data-card">
+            <div class="data-card-number">+20%</div>
+            <div class="data-card-text">electricity price rise in Egypt in 2025</div>
+          </div>
+          <div class="data-card">
+            <div class="data-card-number">25%</div>
+            <div class="data-card-text">of Egypt's CO₂ from industrial sector</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 3 — THE SOLUTION
          ═══════════════════════════════════════ -->
-    <section id="solution">
-        <div class="container">
-            <div class="section-label reveal">02 — The Solution</div>
-            <h2 class="section-title reveal">WE STOPPED LOOKING<br>DOWN FOR FUEL.</h2>
+  <section id="solution">
+    <div class="container">
+      <div class="section-label reveal">02 — The Solution</div>
+      <h2 class="section-title reveal">WE STOPPED LOOKING<br>DOWN FOR FUEL.</h2>
 
-            <div class="solution-grid">
-                <div class="solution-text reveal">
-                    <p><strong>ATON</strong> captures solar heat, stores it inside a sand-based thermal battery, and
-                        delivers it directly to factories as a clean, stable, and affordable alternative to gas and
-                        diesel.</p>
-                    <p>Factories don't buy equipment. They don't sign fuel contracts. They subscribe to heat at a fixed,
-                        lower cost — and we handle everything.</p>
-                    <p><strong>No price shocks. No carbon. No dependency on anyone.</strong></p>
+      <div class="solution-grid">
+        <div class="solution-text reveal">
+          <p><strong>ATON</strong> captures solar heat, stores it inside a sand-based thermal battery, and
+            delivers it directly to factories as a clean, stable, and affordable alternative to gas and
+            diesel.</p>
+          <p>Factories don't buy equipment. They don't sign fuel contracts. They subscribe to heat at a fixed,
+            lower cost — and we handle everything.</p>
+          <p><strong>No price shocks. No carbon. No dependency on anyone.</strong></p>
 
-                    <div class="haas-badge">
-                        <span class="haas-badge-title">HEAT-AS-A-SERVICE</span>
-                        <span class="haas-badge-sub">The sun does the work. We do the delivery.</span>
-                    </div>
+          <div class="haas-badge">
+            <span class="haas-badge-title">HEAT-AS-A-SERVICE</span>
+            <span class="haas-badge-sub">The sun does the work. We do the delivery.</span>
+          </div>
 
-                    <div class="solution-image-wrap" style="margin-top: 32px;">
-                        <img src="assets/image 3.jpeg" alt="ATON sand thermal battery system diagram" loading="lazy">
-                    </div>
-                </div>
-
-                <div class="system-flow reveal">
-                    <div class="flow-step">
-                        <div class="flow-step-header">
-                            <span class="flow-step-icon">☀</span>
-                            <span class="flow-step-name">CAPTURE</span>
-                        </div>
-                        <div class="flow-step-desc">Parabolic solar mirrors concentrate sunlight onto the storage unit
-                        </div>
-                        <div class="flow-step-specs">Solar radiation: 5.5–6.5 kWh/m²/day</div>
-                    </div>
-                    <div class="flow-connector"></div>
-                    <div class="flow-step">
-                        <div class="flow-step-header">
-                            <span class="flow-step-icon">▣</span>
-                            <span class="flow-step-name">STORE</span>
-                        </div>
-                        <div class="flow-step-desc">Sand thermal battery stores heat for 12–18 hours</div>
-                        <div class="flow-step-specs">400–500°C · Rock Wool · &lt;1% heat loss</div>
-                    </div>
-                    <div class="flow-connector"></div>
-                    <div class="flow-step">
-                        <div class="flow-step-header">
-                            <span class="flow-step-icon">⟳</span>
-                            <span class="flow-step-name">TRANSFER</span>
-                        </div>
-                        <div class="flow-step-desc">Thermal oil circulates through sand, absorbs heat, pumped via
-                            insulated pipes</div>
-                        <div class="flow-step-specs">Therminol VP-1 · 250–350°C · Closed loop</div>
-                    </div>
-                    <div class="flow-connector"></div>
-                    <div class="flow-step">
-                        <div class="flow-step-header">
-                            <span class="flow-step-icon">⚡</span>
-                            <span class="flow-step-name">DELIVER</span>
-                        </div>
-                        <div class="flow-step-desc">Heat delivered into factory boilers, ovens, and drying systems</div>
-                        <div class="flow-step-specs">85–90% efficiency · System total ~63%</div>
-                    </div>
-                </div>
-            </div>
+          <div class="solution-image-wrap" style="margin-top: 32px;">
+            <img src="assets/image 3.jpeg" alt="ATON sand thermal battery system diagram" loading="lazy">
+          </div>
         </div>
-    </section>
+
+        <div class="system-flow reveal">
+          <div class="flow-step">
+            <div class="flow-step-header">
+              <span class="flow-step-icon">☀</span>
+              <span class="flow-step-name">CAPTURE</span>
+            </div>
+            <div class="flow-step-desc">Parabolic solar mirrors concentrate sunlight onto the storage unit
+            </div>
+            <div class="flow-step-specs">Solar radiation: 5.5–6.5 kWh/m²/day</div>
+          </div>
+          <div class="flow-connector"></div>
+          <div class="flow-step">
+            <div class="flow-step-header">
+              <span class="flow-step-icon">▣</span>
+              <span class="flow-step-name">STORE</span>
+            </div>
+            <div class="flow-step-desc">Sand thermal battery stores heat for 12–18 hours</div>
+            <div class="flow-step-specs">400–500°C · Rock Wool · &lt;1% heat loss</div>
+          </div>
+          <div class="flow-connector"></div>
+          <div class="flow-step">
+            <div class="flow-step-header">
+              <span class="flow-step-icon">⟳</span>
+              <span class="flow-step-name">TRANSFER</span>
+            </div>
+            <div class="flow-step-desc">Thermal oil circulates through sand, absorbs heat, pumped via
+              insulated pipes</div>
+            <div class="flow-step-specs">Therminol VP-1 · 250–350°C · Closed loop</div>
+          </div>
+          <div class="flow-connector"></div>
+          <div class="flow-step">
+            <div class="flow-step-header">
+              <span class="flow-step-icon">⚡</span>
+              <span class="flow-step-name">DELIVER</span>
+            </div>
+            <div class="flow-step-desc">Heat delivered into factory boilers, ovens, and drying systems</div>
+            <div class="flow-step-specs">85–90% efficiency · System total ~63%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 4 — HOW IT WORKS (PHASES)
          ═══════════════════════════════════════ -->
-    <section id="phases">
-        <div class="container">
-            <div class="section-label reveal">03 — How It Works</div>
-            <h2 class="section-title reveal">TWO PHASES.<br>ONE PLATFORM.</h2>
+  <section id="phases">
+    <div class="container">
+      <div class="section-label reveal">03 — How It Works</div>
+      <h2 class="section-title reveal">TWO PHASES.<br>ONE PLATFORM.</h2>
 
-            <div class="phases-grid">
-                <div class="phase-card reveal">
-                    <span class="phase-tag">Phase One · Now · Sadat City</span>
-                    <h3 class="phase-title">LAUNCH & PROVE</h3>
-                    <p class="phase-desc">Deploy in Sadat City — Egypt's largest industrial zone. Exceptional solar
-                        exposure. Dense factory concentration.</p>
+      <div class="phases-grid">
+        <div class="phase-card reveal">
+          <span class="phase-tag">Phase One · Now · Sadat City</span>
+          <h3 class="phase-title">LAUNCH & PROVE</h3>
+          <p class="phase-desc">Deploy in Sadat City — Egypt's largest industrial zone. Exceptional solar
+            exposure. Dense factory concentration.</p>
 
-                    <div class="phase-track">
-                        <div class="phase-track-title">TRACK 1 — DIRECT HEAT SUPPLY</div>
-                        <div class="phase-track-text">Replace gas/diesel in boilers at fixed subscription. Factories
-                            save 40–60% immediately.</div>
-                    </div>
-                    <div class="phase-track">
-                        <div class="phase-track-title">TRACK 2 — CARBON CREDIT GENERATION</div>
-                        <div class="phase-track-text">Verified CO₂ credits → second revenue stream. Clean energy that
-                            pays twice.</div>
-                    </div>
+          <div class="phase-track">
+            <div class="phase-track-title">TRACK 1 — DIRECT HEAT SUPPLY</div>
+            <div class="phase-track-text">Replace gas/diesel in boilers at fixed subscription. Factories
+              save 40–60% immediately.</div>
+          </div>
+          <div class="phase-track">
+            <div class="phase-track-title">TRACK 2 — CARBON CREDIT GENERATION</div>
+            <div class="phase-track-text">Verified CO₂ credits → second revenue stream. Clean energy that
+              pays twice.</div>
+          </div>
 
-                    <div class="phase-metrics">
-                        <div class="phase-metric">
-                            <div class="phase-metric-val">756</div>
-                            <div class="phase-metric-label">kWth/day</div>
-                        </div>
-                        <div class="phase-metric">
-                            <div class="phase-metric-val">1,134</div>
-                            <div class="phase-metric-label">EGP daily revenue</div>
-                        </div>
-                        <div class="phase-metric">
-                            <div class="phase-metric-val">434</div>
-                            <div class="phase-metric-label">EGP net profit/day</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="phase-card reveal">
-                    <span class="phase-tag">Phase Two · Scale · Egypt-wide</span>
-                    <h3 class="phase-title">SCALE & TRANSFORM</h3>
-                    <p class="phase-desc">Expand to 10th of Ramadan, Borg El-Arab, Alexandria, and beyond — thousands of
-                        factories.</p>
-
-                    <div class="phase-track">
-                        <div class="phase-track-title">INDUSTRIAL HEAT PLATFORM</div>
-                        <div class="phase-track-text">Same proven system deployed at national scale. Infrastructure that
-                            compounds.</div>
-                    </div>
-                    <div class="phase-track">
-                        <div class="phase-track-title">FUTURE ELECTRICITY GENERATION</div>
-                        <div class="phase-track-text">Steam turbines → complete clean energy platform. From heat
-                            provider to energy ecosystem.</div>
-                    </div>
-
-                    <div class="phase-metrics">
-                        <div class="phase-metric">
-                            <div class="phase-metric-val">25,000+</div>
-                            <div class="phase-metric-label">Facilities in Egypt</div>
-                        </div>
-                        <div class="phase-metric">
-                            <div class="phase-metric-val">200,000+</div>
-                            <div class="phase-metric-label">MENA addressable</div>
-                        </div>
-                    </div>
-                </div>
+          <div class="phase-metrics">
+            <div class="phase-metric">
+              <div class="phase-metric-val">756</div>
+              <div class="phase-metric-label">kWth/day</div>
             </div>
+            <div class="phase-metric">
+              <div class="phase-metric-val">1,134</div>
+              <div class="phase-metric-label">EGP daily revenue</div>
+            </div>
+            <div class="phase-metric">
+              <div class="phase-metric-val">434</div>
+              <div class="phase-metric-label">EGP net profit/day</div>
+            </div>
+          </div>
         </div>
-    </section>
+
+        <div class="phase-card reveal">
+          <span class="phase-tag">Phase Two · Scale · Egypt-wide</span>
+          <h3 class="phase-title">SCALE & TRANSFORM</h3>
+          <p class="phase-desc">Expand to 10th of Ramadan, Borg El-Arab, Alexandria, and beyond — thousands of
+            factories.</p>
+
+          <div class="phase-track">
+            <div class="phase-track-title">INDUSTRIAL HEAT PLATFORM</div>
+            <div class="phase-track-text">Same proven system deployed at national scale. Infrastructure that
+              compounds.</div>
+          </div>
+          <div class="phase-track">
+            <div class="phase-track-title">FUTURE ELECTRICITY GENERATION</div>
+            <div class="phase-track-text">Steam turbines → complete clean energy platform. From heat
+              provider to energy ecosystem.</div>
+          </div>
+
+          <div class="phase-metrics">
+            <div class="phase-metric">
+              <div class="phase-metric-val">25,000+</div>
+              <div class="phase-metric-label">Facilities in Egypt</div>
+            </div>
+            <div class="phase-metric">
+              <div class="phase-metric-val">200,000+</div>
+              <div class="phase-metric-label">MENA addressable</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 5 — IMPACT
          ═══════════════════════════════════════ -->
-    <section id="impact">
-        <div class="container">
-            <div class="section-label reveal">04 — The Impact</div>
-            <h2 class="section-title reveal">WHAT ACTUALLY<br>CHANGES.</h2>
+  <section id="impact">
+    <div class="container">
+      <div class="section-label reveal">04 — The Impact</div>
+      <h2 class="section-title reveal">WHAT ACTUALLY<br>CHANGES.</h2>
 
-            <div class="impact-grid">
-                <div class="impact-card reveal">
-                    <div class="impact-card-level">Factory Level</div>
-                    <ul>
-                        <li>Energy costs drop by 40–60%</li>
-                        <li>Carbon emissions cut by 50%+</li>
-                        <li>Fixed subscription — no price volatility</li>
-                        <li>Factory owners can finally plan ahead</li>
-                    </ul>
-                </div>
-                <div class="impact-card reveal">
-                    <div class="impact-card-level">City Level</div>
-                    <ul>
-                        <li>Sadat City becomes clean industrial model</li>
-                        <li>Less fuel burned across the zone</li>
-                        <li>Improved air quality for communities</li>
-                        <li>Less dependence on fossil supply chains</li>
-                    </ul>
-                </div>
-                <div class="impact-card reveal">
-                    <div class="impact-card-level">National Level</div>
-                    <ul>
-                        <li>Supports Egypt Vision 2030 (42% renewable)</li>
-                        <li>Break-even within 3–5 years</li>
-                        <li>Long-term recurring revenue contracts</li>
-                        <li>Egyptian industry competes globally without fossil fuel</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="sdg-pills reveal">
-                <div class="sdg-pill">
-                    <span class="sdg-pill-number">7</span>
-                    <span class="sdg-pill-name">Affordable & Clean Energy</span>
-                </div>
-                <div class="sdg-pill">
-                    <span class="sdg-pill-number">8</span>
-                    <span class="sdg-pill-name">Decent Work & Growth</span>
-                </div>
-                <div class="sdg-pill">
-                    <span class="sdg-pill-number">9</span>
-                    <span class="sdg-pill-name">Industry & Innovation</span>
-                </div>
-                <div class="sdg-pill">
-                    <span class="sdg-pill-number">11</span>
-                    <span class="sdg-pill-name">Sustainable Cities</span>
-                </div>
-                <div class="sdg-pill">
-                    <span class="sdg-pill-number">12</span>
-                    <span class="sdg-pill-name">Responsible Consumption</span>
-                </div>
-                <div class="sdg-pill">
-                    <span class="sdg-pill-number">13</span>
-                    <span class="sdg-pill-name">Climate Action</span>
-                </div>
-            </div>
+      <div class="impact-grid">
+        <div class="impact-card reveal">
+          <div class="impact-card-level">Factory Level</div>
+          <ul>
+            <li>Energy costs drop by 40–60%</li>
+            <li>Carbon emissions cut by 50%+</li>
+            <li>Fixed subscription — no price volatility</li>
+            <li>Factory owners can finally plan ahead</li>
+          </ul>
         </div>
-    </section>
+        <div class="impact-card reveal">
+          <div class="impact-card-level">City Level</div>
+          <ul>
+            <li>Sadat City becomes clean industrial model</li>
+            <li>Less fuel burned across the zone</li>
+            <li>Improved air quality for communities</li>
+            <li>Less dependence on fossil supply chains</li>
+          </ul>
+        </div>
+        <div class="impact-card reveal">
+          <div class="impact-card-level">National Level</div>
+          <ul>
+            <li>Supports Egypt Vision 2030 (42% renewable)</li>
+            <li>Break-even within 3–5 years</li>
+            <li>Long-term recurring revenue contracts</li>
+            <li>Egyptian industry competes globally without fossil fuel</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sdg-pills reveal">
+        <div class="sdg-pill">
+          <span class="sdg-pill-number">7</span>
+          <span class="sdg-pill-name">Affordable & Clean Energy</span>
+        </div>
+        <div class="sdg-pill">
+          <span class="sdg-pill-number">8</span>
+          <span class="sdg-pill-name">Decent Work & Growth</span>
+        </div>
+        <div class="sdg-pill">
+          <span class="sdg-pill-number">9</span>
+          <span class="sdg-pill-name">Industry & Innovation</span>
+        </div>
+        <div class="sdg-pill">
+          <span class="sdg-pill-number">11</span>
+          <span class="sdg-pill-name">Sustainable Cities</span>
+        </div>
+        <div class="sdg-pill">
+          <span class="sdg-pill-number">12</span>
+          <span class="sdg-pill-name">Responsible Consumption</span>
+        </div>
+        <div class="sdg-pill">
+          <span class="sdg-pill-number">13</span>
+          <span class="sdg-pill-name">Climate Action</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 6 — FINANCIALS
          ═══════════════════════════════════════ -->
-    <section id="financials">
-        <div class="container">
-            <div class="section-label reveal">05 — The Numbers</div>
-            <h2 class="section-title reveal">THE MODEL WORKS.</h2>
+  <section id="financials">
+    <div class="container">
+      <div class="section-label reveal">05 — The Numbers</div>
+      <h2 class="section-title reveal">THE MODEL WORKS.</h2>
 
-            <div class="financials-grid reveal">
-                <div class="financial-card">
-                    <div class="financial-number">756</div>
-                    <div class="financial-unit">kWth / day</div>
-                    <div class="financial-desc">Thermal energy generated per system per day</div>
-                </div>
-                <div class="financial-card">
-                    <div class="financial-number">1,134</div>
-                    <div class="financial-unit">EGP / day</div>
-                    <div class="financial-desc">Daily revenue per client at 1.5 EGP/kW</div>
-                </div>
-                <div class="financial-card">
-                    <div class="financial-number">434</div>
-                    <div class="financial-unit">EGP net / day</div>
-                    <div class="financial-desc">Net profit after 700 EGP operating cost</div>
-                </div>
-                <div class="financial-card">
-                    <div class="financial-number">3–5</div>
-                    <div class="financial-unit">years</div>
-                    <div class="financial-desc">Break-even period for full investment</div>
-                </div>
-            </div>
-
-            <div class="progress-container reveal" id="progress-wrap">
-                <div class="progress-label">Investment recovery progress — Year 3–5 break-even</div>
-                <div class="progress-bar-track">
-                    <div class="progress-bar-fill" id="progress-fill"></div>
-                </div>
-                <div class="progress-note">Each additional factory compounds revenue with zero marginal solar input
-                    cost.</div>
-            </div>
+      <div class="financials-grid reveal">
+        <div class="financial-card">
+          <div class="financial-number">756</div>
+          <div class="financial-unit">kWth / day</div>
+          <div class="financial-desc">Thermal energy generated per system per day</div>
         </div>
-    </section>
+        <div class="financial-card">
+          <div class="financial-number">1,134</div>
+          <div class="financial-unit">EGP / day</div>
+          <div class="financial-desc">Daily revenue per client at 1.5 EGP/kW</div>
+        </div>
+        <div class="financial-card">
+          <div class="financial-number">434</div>
+          <div class="financial-unit">EGP net / day</div>
+          <div class="financial-desc">Net profit after 700 EGP operating cost</div>
+        </div>
+        <div class="financial-card">
+          <div class="financial-number">3–5</div>
+          <div class="financial-unit">years</div>
+          <div class="financial-desc">Break-even period for full investment</div>
+        </div>
+      </div>
+
+      <div class="progress-container reveal" id="progress-wrap">
+        <div class="progress-label">Investment recovery progress — Year 3–5 break-even</div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-note">Each additional factory compounds revenue with zero marginal solar input
+          cost.</div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 7 — HERITAGE QUOTE
          ═══════════════════════════════════════ -->
-    <section id="heritage">
-        <div class="heritage-bg"></div>
-        <div class="heritage-overlay"></div>
-        <div class="container heritage-content">
-            <div class="reveal">
-                <p class="heritage-quote">"The sun has been rising over Egypt for thousands of years. Our ancestors
-                    called it <span class="amber">ATON</span> — the source of all life. We just decided it was time to
-                    put it to work."</p>
-                <p class="heritage-vision">ATON is not just an energy project. It is a financial solution for factory
-                    owners, an environmental commitment for our country, and proof that Egyptian industry can compete
-                    globally without burning a single drop of fossil fuel.</p>
-            </div>
-        </div>
-    </section>
+  <section id="heritage">
+    <div class="heritage-bg"></div>
+    <div class="heritage-overlay"></div>
+    <div class="container heritage-content">
+      <div class="reveal">
+        <p class="heritage-quote">"The sun has been rising over Egypt for thousands of years. Our ancestors
+          called it <span class="amber">ATON</span> — the source of all life. We just decided it was time to
+          put it to work."</p>
+        <p class="heritage-vision">ATON is not just an energy project. It is a financial solution for factory
+          owners, an environmental commitment for our country, and proof that Egyptian industry can compete
+          globally without burning a single drop of fossil fuel.</p>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          SECTION 8 — CALL TO ACTION
          ═══════════════════════════════════════ -->
-    <section id="cta">
-        <div class="container">
-            <div class="cta-label reveal">Let's Build Together</div>
-            <h2 class="cta-headline reveal">
-                THE HEAT IS THERE.<br>
-                THE NEED IS REAL.<br>
-                <span class="amber">LET'S LIGHT UP</span><br>
-                EGYPTIAN INDUSTRY.
-            </h2>
-            <p class="cta-sub reveal">Whether you're a factory owner, investor, or partner — we want to hear from you.
-            </p>
+  <section id="cta">
+    <div class="container">
+      <div class="cta-label reveal">Let's Build Together</div>
+      <h2 class="cta-headline reveal">
+        THE HEAT IS THERE.<br>
+        THE NEED IS REAL.<br>
+        <span class="amber">LET'S LIGHT UP</span><br>
+        EGYPTIAN INDUSTRY.
+      </h2>
+      <p class="cta-sub reveal">Whether you're a factory owner, investor, or partner — we want to hear from you.
+      </p>
 
-            <div class="cta-buttons reveal">
-                <a href="mailto:ATON.eg@gmail.com" class="btn-primary">Contact Us →</a>
-                <a href="#solution" class="btn-ghost">Back to Solution</a>
-            </div>
+      <div class="cta-buttons reveal">
+        <a href="mailto:attonheatservice7@gmail.com" class="btn-primary">Contact Us →</a>
+        <a href="#solution" class="btn-ghost">Back to Solution</a>
+      </div>
 
-            <form class="cta-form reveal" id="cta-form" onsubmit="return handleForm(event)">
-                <input type="email" id="cta-email" placeholder="your@email.com" required>
-                <button type="submit">Get in Touch</button>
-            </form>
+      <form class="cta-form reveal" id="cta-form" onsubmit="return handleForm(event)">
+        <input type="email" id="cta-email" placeholder="your@email.com" required>
+        <button type="submit">Get in Touch</button>
+      </form>
 
-            <div class="cta-contact-info reveal">
-                <div class="cta-contact-item">Email: <a href="mailto:ATON.eg@gmail.com">ATON.eg@gmail.com</a></div>
-                <div class="cta-contact-item">Phone: <a href="tel:+201004872384">+20 1004872384</a></div>
-            </div>
-        </div>
-    </section>
+      <div class="cta-contact-info reveal">
+        <div class="cta-contact-item">Email: <a
+            href="mailto:attonheatservice7@gmail.com">attonheatservice7@gmail.com</a></div>
+        <div class="cta-contact-item">Phone: <a href="tel:+201004872384">+20 1004872384</a></div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          FOOTER
          ═══════════════════════════════════════ -->
-    <footer id="footer">
-        <div class="container footer-inner">
-            <div class="footer-left">
-                <img src="assets/logo.png" alt="ATON Logo White">
-                <span class="footer-tagline">Heat as a Service · Sadat City, Egypt</span>
-            </div>
-            <div class="footer-right">© 2025 ATON Energy · Enactus</div>
-        </div>
-    </footer>
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="assets/logo.png" alt="ATON Logo White">
+        <span class="footer-tagline">Heat as a Service · Sadat City, Egypt</span>
+      </div>
+      <div class="footer-right">© 2025 ATON Energy · Enactus</div>
+    </div>
+  </footer>
 
 
-    <!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
          JAVASCRIPT
          ═══════════════════════════════════════ -->
-    <script>
-        // ── Nav scroll behavior ──
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 60);
-        });
+  <script>
+    // ── Nav scroll behavior ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
 
-        // ── Hamburger / Mobile menu ──
-        const hamburger = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
+    // ── Hamburger / Mobile menu ──
+    const hamburger = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
 
-        // ── Scroll-reveal with IntersectionObserver ──
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // ── Progress bar animation ──
-        const progressFill = document.getElementById('progress-fill');
-        const progressObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    progressFill.classList.add('animated');
-                }
-            });
-        }, { threshold: 0.3 });
-        progressObserver.observe(document.getElementById('progress-wrap'));
-
-        // ── Counter animation for financial numbers ──
-        function animateCounters() {
-            const counters = document.querySelectorAll('.financial-number');
-            counters.forEach(counter => {
-                const text = counter.textContent;
-                // Only animate pure numbers
-                if (/^\d/.test(text.replace(/,/g, ''))) {
-                    const end = parseInt(text.replace(/,/g, ''));
-                    if (isNaN(end)) return;
-                    const formatted = text.includes(',');
-                    let start = 0;
-                    const duration = 2000;
-                    const startTime = performance.now();
-                    function tick(now) {
-                        const elapsed = now - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        const current = Math.floor(eased * end);
-                        counter.textContent = formatted ? current.toLocaleString() : current;
-                        if (progress < 1) requestAnimationFrame(tick);
-                        else counter.textContent = text; // restore original
-                    }
-                    requestAnimationFrame(tick);
-                }
-            });
+    // ── Scroll-reveal with IntersectionObserver ──
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
-        const finSection = document.getElementById('financials');
-        let countersDone = false;
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersDone) {
-                    countersDone = true;
-                    animateCounters();
-                }
-            });
-        }, { threshold: 0.3 });
-        counterObserver.observe(finSection);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
 
-        // ── CTA form handler ──
-        function handleForm(e) {
-            e.preventDefault();
-            const email = document.getElementById('cta-email').value;
-            window.location.href = 'mailto:ATON.eg@gmail.com?subject=Inquiry from ' + encodeURIComponent(email) + '&body=' + encodeURIComponent('Hello ATON team,\n\nI would like to learn more about Heat as a Service.\n\nMy email: ' + email + '\n\nBest regards');
-            return false;
+    // ── Progress bar animation ──
+    const progressFill = document.getElementById('progress-fill');
+    const progressObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          progressFill.classList.add('animated');
         }
-    </script>
+      });
+    }, { threshold: 0.3 });
+    progressObserver.observe(document.getElementById('progress-wrap'));
+
+    // ── Counter animation for financial numbers ──
+    function animateCounters() {
+      const counters = document.querySelectorAll('.financial-number');
+      counters.forEach(counter => {
+        const text = counter.textContent;
+        // Only animate pure numbers
+        if (/^\d/.test(text.replace(/,/g, ''))) {
+          const end = parseInt(text.replace(/,/g, ''));
+          if (isNaN(end)) return;
+          const formatted = text.includes(',');
+          let start = 0;
+          const duration = 2000;
+          const startTime = performance.now();
+          function tick(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(eased * end);
+            counter.textContent = formatted ? current.toLocaleString() : current;
+            if (progress < 1) requestAnimationFrame(tick);
+            else counter.textContent = text; // restore original
+          }
+          requestAnimationFrame(tick);
+        }
+      });
+    }
+    const finSection = document.getElementById('financials');
+    let countersDone = false;
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersDone) {
+          countersDone = true;
+          animateCounters();
+        }
+      });
+    }, { threshold: 0.3 });
+    counterObserver.observe(finSection);
+
+    // ── CTA form handler ──
+    function handleForm(e) {
+      e.preventDefault();
+      const email = document.getElementById('cta-email').value;
+      window.location.href = 'mailto:attonheatservice7@gmail.com?subject=Inquiry from ' + encodeURIComponent(email) + '&body=' + encodeURIComponent('Hello ATON team,\n\nI would like to learn more about Heat as a Service.\n\nMy email: ' + email + '\n\nBest regards');
+      return false;
+    }
+  </script>
 </body>
 
 </html>
