@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATON — Heat as a Service | Clean Industrial Thermal Energy</title>
-    <meta name="description" content="ATON captures solar heat, stores it in sand, and delivers it directly to Egyptian factories — replacing diesel and gas with a clean, fixed-cost subscription.">
+    <meta name="description"
+        content="ATON captures solar heat, stores it in sand, and delivers it directly to Egyptian factories — replacing diesel and gas with a clean, fixed-cost subscription.">
     <link rel="icon" href="assets/logo color.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         /* ═══════════════════════════════════════════════
            RESET & DESIGN TOKENS
            ═══════════════════════════════════════════════ */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         :root {
             --bg-primary: #0A0F1E;
@@ -32,7 +42,10 @@
             --font-mono: 'DM Mono', monospace;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             background: var(--bg-primary);
@@ -41,9 +54,23 @@
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; display: block; }
-        button, input { font-family: inherit; border: none; outline: none; }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+            border: none;
+            outline: none;
+        }
 
         /* ═══════════════════════════════════════════════
            UTILITY CLASSES
@@ -53,6 +80,7 @@
             margin: 0 auto;
             padding: 0 24px;
         }
+
         .section-label {
             font-family: var(--font-mono);
             font-size: 0.8rem;
@@ -61,6 +89,7 @@
             text-transform: uppercase;
             margin-bottom: 16px;
         }
+
         .section-title {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 5vw, 4.5rem);
@@ -76,6 +105,7 @@
             transform: translateY(40px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -96,7 +126,9 @@
            ═══════════════════════════════════════════════ */
         #navbar {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
             padding: 16px 0;
             background: rgba(10, 15, 30, 0.4);
@@ -105,56 +137,68 @@
             border-bottom: 1px solid transparent;
             transition: background 0.4s, border-color 0.4s, padding 0.4s;
         }
+
         #navbar.scrolled {
             background: rgba(10, 15, 30, 0.92);
             border-bottom-color: var(--border-color);
             padding: 10px 0;
         }
+
         .nav-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
+
         .nav-logo {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .nav-logo img {
-            height: 36px;
+            height: 100px;
             width: auto;
         }
+
         .nav-logo-text {
             font-family: var(--font-mono);
-            font-size: 0.65rem;
-            color: var(--text-muted);
+            font-size: 0.75rem;
+            color: #94A3B8;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
+
         .nav-links {
             display: flex;
             align-items: center;
             gap: 32px;
             list-style: none;
         }
+
         .nav-links a {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            color: #94A3B8;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             transition: color 0.3s;
         }
-        .nav-links a:hover { color: var(--text-primary); }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
         .nav-cta-btn {
             background: var(--accent-amber);
             color: var(--bg-primary) !important;
-            padding: 8px 20px;
+            padding: 10px 22px;
             border-radius: 4px;
             font-weight: 700;
-            font-size: 0.75rem !important;
+            font-size: 0.85rem !important;
             transition: background 0.3s, transform 0.3s;
         }
+
         .nav-cta-btn:hover {
             background: #D97706;
             transform: translateY(-1px);
@@ -169,6 +213,7 @@
             background: none;
             padding: 4px;
         }
+
         .hamburger span {
             display: block;
             width: 24px;
@@ -176,14 +221,26 @@
             background: var(--text-primary);
             transition: transform 0.3s, opacity 0.3s;
         }
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(10, 15, 30, 0.97);
             backdrop-filter: blur(20px);
             z-index: 999;
@@ -192,7 +249,11 @@
             justify-content: center;
             gap: 32px;
         }
-        .mobile-menu.open { display: flex; }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
         .mobile-menu a {
             font-family: var(--font-display);
             font-size: 2rem;
@@ -200,7 +261,10 @@
             color: var(--text-primary);
             transition: color 0.3s;
         }
-        .mobile-menu a:hover { color: var(--accent-amber); }
+
+        .mobile-menu a:hover {
+            color: var(--accent-amber);
+        }
 
         /* ═══════════════════════════════════════════════
            HERO SECTION
@@ -233,9 +297,15 @@
             background-size: 60px 60px;
             animation: gridShift 20s linear infinite;
         }
+
         @keyframes gridShift {
-            0% { background-position: 0 0; }
-            100% { background-position: 60px 60px; }
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 60px 60px;
+            }
         }
 
         /* Glowing orbs */
@@ -245,28 +315,47 @@
             filter: blur(100px);
             pointer-events: none;
         }
+
         .orb-amber {
-            width: 500px; height: 500px;
+            width: 500px;
+            height: 500px;
             background: radial-gradient(circle, rgba(245, 158, 11, 0.25), transparent 70%);
-            top: 10%; right: -5%;
+            top: 10%;
+            right: -5%;
             animation: floatOrb 8s ease-in-out infinite;
         }
+
         .orb-teal {
-            width: 350px; height: 350px;
+            width: 350px;
+            height: 350px;
             background: radial-gradient(circle, rgba(13, 148, 136, 0.2), transparent 70%);
-            bottom: 10%; left: -5%;
+            bottom: 10%;
+            left: -5%;
             animation: floatOrb 10s ease-in-out infinite reverse;
         }
+
         @keyframes floatOrb {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -20px) scale(1.05); }
-            66% { transform: translate(-20px, 15px) scale(0.95); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -20px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-20px, 15px) scale(0.95);
+            }
         }
 
         /* Dark gradient overlay at bottom */
         .hero-overlay {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             height: 200px;
             background: linear-gradient(to top, var(--bg-primary), transparent);
             pointer-events: none;
@@ -279,13 +368,17 @@
             padding-bottom: 80px;
             width: 100%;
         }
+
         .hero-inner {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             gap: 40px;
         }
-        .hero-left { flex: 1; }
+
+        .hero-left {
+            flex: 1;
+        }
 
         .hero-eyebrow {
             font-family: var(--font-mono);
@@ -297,6 +390,7 @@
             opacity: 0;
             animation: fadeUp 0.8s 0.2s forwards;
         }
+
         .hero-headline {
             font-family: var(--font-display);
             font-size: clamp(5rem, 12vw, 11rem);
@@ -306,11 +400,16 @@
             opacity: 0;
             animation: fadeUp 0.8s 0.4s forwards;
         }
-        .hero-headline .amber { color: var(--accent-amber); }
+
+        .hero-headline .amber {
+            color: var(--accent-amber);
+        }
+
         .hero-headline .ghost {
             color: transparent;
             -webkit-text-stroke: 2px var(--text-primary);
         }
+
         .hero-sub {
             font-size: 1rem;
             color: var(--text-muted);
@@ -320,6 +419,7 @@
             opacity: 0;
             animation: fadeUp 0.8s 0.6s forwards;
         }
+
         .hero-buttons {
             display: flex;
             gap: 16px;
@@ -327,6 +427,7 @@
             opacity: 0;
             animation: fadeUp 0.8s 0.8s forwards;
         }
+
         .btn-primary {
             background: var(--accent-amber);
             color: var(--bg-primary);
@@ -340,11 +441,13 @@
             align-items: center;
             gap: 8px;
         }
+
         .btn-primary:hover {
             background: #D97706;
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3);
         }
+
         .btn-ghost {
             background: transparent;
             color: var(--text-primary);
@@ -356,6 +459,7 @@
             border: 1px solid rgba(241, 245, 249, 0.2);
             transition: border-color 0.3s, background 0.3s, transform 0.3s;
         }
+
         .btn-ghost:hover {
             border-color: var(--accent-amber);
             background: rgba(245, 158, 11, 0.05);
@@ -371,15 +475,18 @@
             opacity: 0;
             animation: fadeUp 0.8s 1s forwards;
         }
+
         .hero-stat {
             text-align: right;
         }
+
         .hero-stat-number {
             font-family: var(--font-display);
             font-size: 3.5rem;
             line-height: 1;
             color: var(--text-primary);
         }
+
         .hero-stat-unit {
             font-family: var(--font-mono);
             font-size: 0.7rem;
@@ -402,6 +509,7 @@
             opacity: 0;
             animation: fadeUp 0.8s 1.2s forwards;
         }
+
         .scroll-indicator span {
             font-family: var(--font-mono);
             font-size: 0.65rem;
@@ -409,20 +517,38 @@
             letter-spacing: 3px;
             text-transform: uppercase;
         }
+
         .scroll-line {
             width: 1px;
             height: 40px;
             background: linear-gradient(to bottom, var(--accent-amber), transparent);
             animation: scrollPulse 2s ease-in-out infinite;
         }
+
         @keyframes scrollPulse {
-            0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
-            50% { opacity: 1; transform: scaleY(1); }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scaleY(0.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
         }
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ═══════════════════════════════════════════════
@@ -434,16 +560,19 @@
             position: relative;
             overflow: hidden;
         }
+
         .problem-bg {
             position: absolute;
-            top: 0; right: 0;
+            top: 0;
+            right: 0;
             width: 50%;
             height: 100%;
             background: url('assets/image 4.jpeg') center center / cover no-repeat;
             opacity: 0.06;
-            mask-image: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
-            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
+            mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+            -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
         }
+
         .problem-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -451,12 +580,14 @@
             position: relative;
             z-index: 1;
         }
+
         .problem-text p {
             color: var(--text-muted);
             font-size: 1rem;
             margin-bottom: 24px;
             line-height: 1.8;
         }
+
         .callout-box {
             border-left: 3px solid var(--accent-amber);
             padding: 24px 28px;
@@ -464,6 +595,7 @@
             border-radius: 0 8px 8px 0;
             margin-top: 32px;
         }
+
         .callout-box p {
             color: var(--text-primary) !important;
             font-style: italic;
@@ -476,6 +608,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
+
         .data-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -485,22 +618,30 @@
             overflow: hidden;
             transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
         }
+
         .data-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 3px;
             background: var(--accent-amber);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s;
         }
+
         .data-card:hover {
             transform: translateY(-6px);
             border-color: rgba(245, 158, 11, 0.2);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
-        .data-card:hover::before { transform: scaleX(1); }
+
+        .data-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .data-card-number {
             font-family: var(--font-display);
             font-size: 3rem;
@@ -508,6 +649,7 @@
             margin-bottom: 8px;
             color: var(--text-primary);
         }
+
         .data-card-text {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -524,18 +666,21 @@
             padding: 120px 0;
             position: relative;
         }
+
         .solution-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: start;
         }
+
         .solution-text p {
             color: var(--text-muted);
             font-size: 1rem;
             margin-bottom: 20px;
             line-height: 1.8;
         }
+
         .solution-text p strong {
             color: var(--text-primary);
         }
@@ -550,12 +695,14 @@
             margin-top: 24px;
             background: var(--accent-amber-dim);
         }
+
         .haas-badge-title {
             font-family: var(--font-display);
             font-size: 1.6rem;
             letter-spacing: 4px;
             color: var(--accent-amber);
         }
+
         .haas-badge-sub {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -570,12 +717,14 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
         }
+
         .solution-image-wrap img {
             width: 100%;
             height: 220px;
             object-fit: cover;
             transition: transform 0.6s;
         }
+
         .solution-image-wrap:hover img {
             transform: scale(1.03);
         }
@@ -587,6 +736,7 @@
             gap: 0;
             position: relative;
         }
+
         .flow-step {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -595,23 +745,27 @@
             position: relative;
             transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
         }
+
         .flow-step:hover {
             transform: translateX(8px);
             border-color: rgba(245, 158, 11, 0.3);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
+
         .flow-connector {
             width: 2px;
             height: 28px;
             background: linear-gradient(to bottom, var(--accent-amber), rgba(245, 158, 11, 0.2));
             margin-left: 36px;
         }
+
         .flow-step-header {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 8px;
         }
+
         .flow-step-icon {
             font-size: 1.4rem;
             width: 40px;
@@ -623,17 +777,20 @@
             border-radius: 8px;
             flex-shrink: 0;
         }
+
         .flow-step-name {
             font-family: var(--font-display);
             font-size: 1.3rem;
             letter-spacing: 3px;
         }
+
         .flow-step-desc {
             font-size: 0.88rem;
             color: var(--text-muted);
             margin-bottom: 6px;
             padding-left: 52px;
         }
+
         .flow-step-specs {
             font-family: var(--font-mono);
             font-size: 0.7rem;
@@ -649,11 +806,13 @@
             background: var(--bg-secondary);
             padding: 120px 0;
         }
+
         .phases-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
         }
+
         .phase-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -663,17 +822,22 @@
             overflow: hidden;
             transition: border-color 0.4s, box-shadow 0.4s;
         }
+
         .phase-card:hover {
             border-color: rgba(245, 158, 11, 0.2);
             box-shadow: 0 12px 50px rgba(0, 0, 0, 0.3);
         }
+
         .phase-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--accent-amber), var(--accent-teal));
         }
+
         .phase-tag {
             display: inline-block;
             font-family: var(--font-mono);
@@ -686,18 +850,21 @@
             border-radius: 100px;
             margin-bottom: 20px;
         }
+
         .phase-title {
             font-family: var(--font-display);
             font-size: 2.2rem;
             letter-spacing: 3px;
             margin-bottom: 16px;
         }
+
         .phase-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 28px;
             line-height: 1.7;
         }
+
         .phase-track {
             background: rgba(10, 15, 30, 0.5);
             border: 1px solid var(--border-color);
@@ -705,6 +872,7 @@
             padding: 18px 20px;
             margin-bottom: 14px;
         }
+
         .phase-track-title {
             font-family: var(--font-display);
             font-size: 1.1rem;
@@ -712,17 +880,20 @@
             color: var(--accent-amber);
             margin-bottom: 6px;
         }
+
         .phase-track-text {
             font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.6;
         }
+
         .phase-metrics {
             display: flex;
             gap: 16px;
             margin-top: 24px;
             flex-wrap: wrap;
         }
+
         .phase-metric {
             background: rgba(10, 15, 30, 0.6);
             border: 1px solid var(--border-color);
@@ -732,12 +903,14 @@
             flex: 1;
             min-width: 100px;
         }
+
         .phase-metric-val {
             font-family: var(--font-display);
             font-size: 1.3rem;
             letter-spacing: 1px;
             color: var(--text-primary);
         }
+
         .phase-metric-label {
             font-family: var(--font-mono);
             font-size: 0.6rem;
@@ -753,12 +926,14 @@
             background: var(--bg-primary);
             padding: 120px 0;
         }
+
         .impact-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin-bottom: 48px;
         }
+
         .impact-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -768,20 +943,24 @@
             overflow: hidden;
             transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
         }
+
         .impact-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
             width: 4px;
             height: 100%;
             background: var(--accent-teal);
             border-radius: 4px 0 0 4px;
         }
+
         .impact-card:hover {
             transform: translateY(-6px);
             border-color: rgba(13, 148, 136, 0.3);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
+
         .impact-card-level {
             font-family: var(--font-mono);
             font-size: 0.7rem;
@@ -790,9 +969,11 @@
             text-transform: uppercase;
             margin-bottom: 20px;
         }
+
         .impact-card ul {
             list-style: none;
         }
+
         .impact-card li {
             position: relative;
             padding-left: 20px;
@@ -801,6 +982,7 @@
             color: var(--text-muted);
             line-height: 1.5;
         }
+
         .impact-card li::before {
             content: '↓';
             position: absolute;
@@ -815,6 +997,7 @@
             gap: 12px;
             justify-content: center;
         }
+
         .sdg-pill {
             display: flex;
             align-items: center;
@@ -826,16 +1009,19 @@
             transition: border-color 0.3s, background 0.3s, transform 0.3s;
             cursor: default;
         }
+
         .sdg-pill:hover {
             border-color: var(--accent-teal);
             background: var(--accent-teal-dim);
             transform: translateY(-3px);
         }
+
         .sdg-pill-number {
             font-family: var(--font-display);
             font-size: 1.2rem;
             color: var(--accent-teal);
         }
+
         .sdg-pill-name {
             font-family: var(--font-mono);
             font-size: 0.65rem;
@@ -851,12 +1037,14 @@
             background: var(--bg-secondary);
             padding: 120px 0;
         }
+
         .financials-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
             margin-bottom: 48px;
         }
+
         .financial-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -865,11 +1053,13 @@
             text-align: center;
             transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
         }
+
         .financial-card:hover {
             transform: translateY(-6px);
             border-color: rgba(245, 158, 11, 0.2);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
+
         .financial-number {
             font-family: var(--font-display);
             font-size: 3.5rem;
@@ -877,6 +1067,7 @@
             margin-bottom: 4px;
             color: var(--accent-amber);
         }
+
         .financial-unit {
             font-family: var(--font-mono);
             font-size: 0.8rem;
@@ -884,6 +1075,7 @@
             letter-spacing: 1px;
             margin-bottom: 12px;
         }
+
         .financial-desc {
             font-size: 0.8rem;
             color: var(--text-muted);
@@ -896,6 +1088,7 @@
             border-radius: 16px;
             padding: 32px;
         }
+
         .progress-label {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -903,6 +1096,7 @@
             letter-spacing: 1px;
             margin-bottom: 16px;
         }
+
         .progress-bar-track {
             width: 100%;
             height: 12px;
@@ -911,6 +1105,7 @@
             overflow: hidden;
             margin-bottom: 16px;
         }
+
         .progress-bar-fill {
             height: 100%;
             width: 0%;
@@ -918,7 +1113,11 @@
             border-radius: 100px;
             transition: width 2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .progress-bar-fill.animated { width: 60%; }
+
+        .progress-bar-fill.animated {
+            width: 60%;
+        }
+
         .progress-note {
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -935,6 +1134,7 @@
             overflow: hidden;
             text-align: center;
         }
+
         .heritage-bg {
             position: absolute;
             inset: 0;
@@ -942,19 +1142,22 @@
             opacity: 0.12;
             filter: saturate(0.5);
         }
+
         .heritage-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(to bottom,
-                var(--bg-primary),
-                rgba(10, 15, 30, 0.5) 30%,
-                rgba(10, 15, 30, 0.5) 70%,
-                var(--bg-primary));
+                    var(--bg-primary),
+                    rgba(10, 15, 30, 0.5) 30%,
+                    rgba(10, 15, 30, 0.5) 70%,
+                    var(--bg-primary));
         }
+
         .heritage-content {
             position: relative;
             z-index: 1;
         }
+
         .heritage-quote {
             font-family: Georgia, 'Times New Roman', serif;
             font-size: clamp(1.3rem, 3vw, 2rem);
@@ -964,7 +1167,13 @@
             margin: 0 auto 40px;
             color: var(--text-primary);
         }
-        .heritage-quote .amber { color: var(--accent-amber); font-style: normal; font-weight: 700; }
+
+        .heritage-quote .amber {
+            color: var(--accent-amber);
+            font-style: normal;
+            font-weight: 700;
+        }
+
         .heritage-vision {
             font-size: 1rem;
             color: var(--text-muted);
@@ -981,6 +1190,7 @@
             padding: 120px 0;
             text-align: center;
         }
+
         .cta-label {
             font-family: var(--font-mono);
             font-size: 0.8rem;
@@ -989,6 +1199,7 @@
             text-transform: uppercase;
             margin-bottom: 20px;
         }
+
         .cta-headline {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 6vw, 5rem);
@@ -996,7 +1207,11 @@
             letter-spacing: 3px;
             margin-bottom: 24px;
         }
-        .cta-headline .amber { color: var(--accent-amber); }
+
+        .cta-headline .amber {
+            color: var(--accent-amber);
+        }
+
         .cta-sub {
             font-size: 1rem;
             color: var(--text-muted);
@@ -1004,6 +1219,7 @@
             margin: 0 auto 40px;
             line-height: 1.7;
         }
+
         .cta-buttons {
             display: flex;
             gap: 16px;
@@ -1020,6 +1236,7 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
         }
+
         .cta-form input[type="email"] {
             flex: 1;
             padding: 14px 20px;
@@ -1028,9 +1245,11 @@
             font-size: 0.9rem;
             border: none;
         }
+
         .cta-form input[type="email"]::placeholder {
             color: var(--text-muted);
         }
+
         .cta-form button {
             padding: 14px 24px;
             background: var(--accent-amber);
@@ -1041,7 +1260,10 @@
             transition: background 0.3s;
             white-space: nowrap;
         }
-        .cta-form button:hover { background: #D97706; }
+
+        .cta-form button:hover {
+            background: #D97706;
+        }
 
         .cta-contact-info {
             margin-top: 40px;
@@ -1050,17 +1272,22 @@
             gap: 32px;
             justify-content: center;
         }
+
         .cta-contact-item {
             font-family: var(--font-mono);
             font-size: 0.75rem;
             color: var(--text-muted);
             letter-spacing: 1px;
         }
+
         .cta-contact-item a {
             color: var(--accent-amber);
             transition: opacity 0.3s;
         }
-        .cta-contact-item a:hover { opacity: 0.8; }
+
+        .cta-contact-item a:hover {
+            opacity: 0.8;
+        }
 
         /* ═══════════════════════════════════════════════
            FOOTER
@@ -1070,20 +1297,24 @@
             border-top: 1px solid var(--border-color);
             padding: 32px 0;
         }
+
         .footer-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
+
         .footer-left {
             display: flex;
             align-items: center;
             gap: 16px;
         }
+
         .footer-left img {
             height: 28px;
             width: auto;
         }
+
         .footer-tagline {
             font-family: var(--font-mono);
             font-size: 0.65rem;
@@ -1091,6 +1322,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
+
         .footer-right {
             font-family: var(--font-mono);
             font-size: 0.65rem;
@@ -1102,19 +1334,29 @@
            RESPONSIVE — 900px breakpoint
            ═══════════════════════════════════════════════ */
         @media (max-width: 900px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
 
             .hero-inner {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .hero-stats {
                 flex-direction: row;
                 gap: 32px;
                 width: 100%;
             }
-            .hero-stat { text-align: left; }
+
+            .hero-stat {
+                text-align: left;
+            }
+
             .hero-headline {
                 font-size: clamp(3.5rem, 14vw, 6rem);
             }
@@ -1147,6 +1389,7 @@
             .sdg-pills {
                 gap: 8px;
             }
+
             .sdg-pill {
                 padding: 8px 14px;
             }
@@ -1157,21 +1400,26 @@
                 flex-direction: column;
                 gap: 16px;
             }
+
             .financials-grid {
                 grid-template-columns: 1fr;
             }
+
             .data-cards-grid {
                 grid-template-columns: 1fr;
             }
+
             .cta-form {
                 flex-direction: column;
             }
+
             .cta-form button {
                 padding: 14px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- ═══════════════════════════════════════
@@ -1227,7 +1475,8 @@
                         <span class="amber">AS A</span><br>
                         <span class="ghost">SERVICE</span>
                     </h1>
-                    <p class="hero-sub">We capture the sun's heat, store it in sand, and deliver it directly to Egyptian factories — replacing diesel and gas with a clean, fixed-cost subscription.</p>
+                    <p class="hero-sub">We capture the sun's heat, store it in sand, and deliver it directly to Egyptian
+                        factories — replacing diesel and gas with a clean, fixed-cost subscription.</p>
                     <div class="hero-buttons">
                         <a href="#solution" class="btn-primary">See How It Works →</a>
                         <a href="#cta" class="btn-ghost">Talk to Us</a>
@@ -1268,11 +1517,16 @@
 
             <div class="problem-grid">
                 <div class="problem-text reveal">
-                    <p>Every cement factory, every ceramics plant, every food processing line depends on high-temperature thermal energy to operate. And today, almost all of that heat comes from natural gas and diesel fuel.</p>
-                    <p>Since global fuel price shocks, factories absorb these costs with no hedge, no backup, and no alternative. Energy bills now represent up to 40% of total operating costs.</p>
+                    <p>Every cement factory, every ceramics plant, every food processing line depends on
+                        high-temperature thermal energy to operate. And today, almost all of that heat comes from
+                        natural gas and diesel fuel.</p>
+                    <p>Since global fuel price shocks, factories absorb these costs with no hedge, no backup, and no
+                        alternative. Energy bills now represent up to 40% of total operating costs.</p>
 
                     <div class="callout-box">
-                        <p>"Egypt receives some of the highest solar radiation on Earth — yet that energy falls on the same deserts where our industrial cities are built, and goes completely to waste. Every. Single. Day."</p>
+                        <p>"Egypt receives some of the highest solar radiation on Earth — yet that energy falls on the
+                            same deserts where our industrial cities are built, and goes completely to waste. Every.
+                            Single. Day."</p>
                     </div>
                 </div>
 
@@ -1309,8 +1563,11 @@
 
             <div class="solution-grid">
                 <div class="solution-text reveal">
-                    <p><strong>ATON</strong> captures solar heat, stores it inside a sand-based thermal battery, and delivers it directly to factories as a clean, stable, and affordable alternative to gas and diesel.</p>
-                    <p>Factories don't buy equipment. They don't sign fuel contracts. They subscribe to heat at a fixed, lower cost — and we handle everything.</p>
+                    <p><strong>ATON</strong> captures solar heat, stores it inside a sand-based thermal battery, and
+                        delivers it directly to factories as a clean, stable, and affordable alternative to gas and
+                        diesel.</p>
+                    <p>Factories don't buy equipment. They don't sign fuel contracts. They subscribe to heat at a fixed,
+                        lower cost — and we handle everything.</p>
                     <p><strong>No price shocks. No carbon. No dependency on anyone.</strong></p>
 
                     <div class="haas-badge">
@@ -1329,7 +1586,8 @@
                             <span class="flow-step-icon">☀</span>
                             <span class="flow-step-name">CAPTURE</span>
                         </div>
-                        <div class="flow-step-desc">Parabolic solar mirrors concentrate sunlight onto the storage unit</div>
+                        <div class="flow-step-desc">Parabolic solar mirrors concentrate sunlight onto the storage unit
+                        </div>
                         <div class="flow-step-specs">Solar radiation: 5.5–6.5 kWh/m²/day</div>
                     </div>
                     <div class="flow-connector"></div>
@@ -1347,7 +1605,8 @@
                             <span class="flow-step-icon">⟳</span>
                             <span class="flow-step-name">TRANSFER</span>
                         </div>
-                        <div class="flow-step-desc">Thermal oil circulates through sand, absorbs heat, pumped via insulated pipes</div>
+                        <div class="flow-step-desc">Thermal oil circulates through sand, absorbs heat, pumped via
+                            insulated pipes</div>
                         <div class="flow-step-specs">Therminol VP-1 · 250–350°C · Closed loop</div>
                     </div>
                     <div class="flow-connector"></div>
@@ -1377,15 +1636,18 @@
                 <div class="phase-card reveal">
                     <span class="phase-tag">Phase One · Now · Sadat City</span>
                     <h3 class="phase-title">LAUNCH & PROVE</h3>
-                    <p class="phase-desc">Deploy in Sadat City — Egypt's largest industrial zone. Exceptional solar exposure. Dense factory concentration.</p>
+                    <p class="phase-desc">Deploy in Sadat City — Egypt's largest industrial zone. Exceptional solar
+                        exposure. Dense factory concentration.</p>
 
                     <div class="phase-track">
                         <div class="phase-track-title">TRACK 1 — DIRECT HEAT SUPPLY</div>
-                        <div class="phase-track-text">Replace gas/diesel in boilers at fixed subscription. Factories save 40–60% immediately.</div>
+                        <div class="phase-track-text">Replace gas/diesel in boilers at fixed subscription. Factories
+                            save 40–60% immediately.</div>
                     </div>
                     <div class="phase-track">
                         <div class="phase-track-title">TRACK 2 — CARBON CREDIT GENERATION</div>
-                        <div class="phase-track-text">Verified CO₂ credits → second revenue stream. Clean energy that pays twice.</div>
+                        <div class="phase-track-text">Verified CO₂ credits → second revenue stream. Clean energy that
+                            pays twice.</div>
                     </div>
 
                     <div class="phase-metrics">
@@ -1407,15 +1669,18 @@
                 <div class="phase-card reveal">
                     <span class="phase-tag">Phase Two · Scale · Egypt-wide</span>
                     <h3 class="phase-title">SCALE & TRANSFORM</h3>
-                    <p class="phase-desc">Expand to 10th of Ramadan, Borg El-Arab, Alexandria, and beyond — thousands of factories.</p>
+                    <p class="phase-desc">Expand to 10th of Ramadan, Borg El-Arab, Alexandria, and beyond — thousands of
+                        factories.</p>
 
                     <div class="phase-track">
                         <div class="phase-track-title">INDUSTRIAL HEAT PLATFORM</div>
-                        <div class="phase-track-text">Same proven system deployed at national scale. Infrastructure that compounds.</div>
+                        <div class="phase-track-text">Same proven system deployed at national scale. Infrastructure that
+                            compounds.</div>
                     </div>
                     <div class="phase-track">
                         <div class="phase-track-title">FUTURE ELECTRICITY GENERATION</div>
-                        <div class="phase-track-text">Steam turbines → complete clean energy platform. From heat provider to energy ecosystem.</div>
+                        <div class="phase-track-text">Steam turbines → complete clean energy platform. From heat
+                            provider to energy ecosystem.</div>
                     </div>
 
                     <div class="phase-metrics">
@@ -1538,7 +1803,8 @@
                 <div class="progress-bar-track">
                     <div class="progress-bar-fill" id="progress-fill"></div>
                 </div>
-                <div class="progress-note">Each additional factory compounds revenue with zero marginal solar input cost.</div>
+                <div class="progress-note">Each additional factory compounds revenue with zero marginal solar input
+                    cost.</div>
             </div>
         </div>
     </section>
@@ -1552,8 +1818,12 @@
         <div class="heritage-overlay"></div>
         <div class="container heritage-content">
             <div class="reveal">
-                <p class="heritage-quote">"The sun has been rising over Egypt for thousands of years. Our ancestors called it <span class="amber">ATON</span> — the source of all life. We just decided it was time to put it to work."</p>
-                <p class="heritage-vision">ATON is not just an energy project. It is a financial solution for factory owners, an environmental commitment for our country, and proof that Egyptian industry can compete globally without burning a single drop of fossil fuel.</p>
+                <p class="heritage-quote">"The sun has been rising over Egypt for thousands of years. Our ancestors
+                    called it <span class="amber">ATON</span> — the source of all life. We just decided it was time to
+                    put it to work."</p>
+                <p class="heritage-vision">ATON is not just an energy project. It is a financial solution for factory
+                    owners, an environmental commitment for our country, and proof that Egyptian industry can compete
+                    globally without burning a single drop of fossil fuel.</p>
             </div>
         </div>
     </section>
@@ -1571,7 +1841,8 @@
                 <span class="amber">LET'S LIGHT UP</span><br>
                 EGYPTIAN INDUSTRY.
             </h2>
-            <p class="cta-sub reveal">Whether you're a factory owner, investor, or partner — we want to hear from you.</p>
+            <p class="cta-sub reveal">Whether you're a factory owner, investor, or partner — we want to hear from you.
+            </p>
 
             <div class="cta-buttons reveal">
                 <a href="mailto:ATON.eg@gmail.com" class="btn-primary">Contact Us →</a>
@@ -1700,4 +1971,5 @@
         }
     </script>
 </body>
+
 </html>
