@@ -1331,9 +1331,62 @@
         }
 
         /* ═══════════════════════════════════════════════
-           RESPONSIVE — 900px breakpoint
+           RESPONSIVE — TABLET (max-width: 1024px)
            ═══════════════════════════════════════════════ */
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
+            .nav-logo img {
+                height: 70px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .nav-cta-btn {
+                font-size: 0.75rem !important;
+                padding: 8px 16px;
+            }
+
+            #problem,
+            #solution,
+            #phases,
+            #impact,
+            #financials,
+            #cta {
+                padding: 90px 0;
+            }
+
+            #heritage {
+                padding: 100px 0;
+            }
+
+            .problem-grid,
+            .solution-grid {
+                gap: 40px;
+            }
+
+            .financials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phase-card {
+                padding: 32px 24px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════
+           RESPONSIVE — MOBILE (max-width: 768px)
+           ═══════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            /* Nav */
             .nav-links {
                 display: none;
             }
@@ -1342,48 +1395,206 @@
                 display: flex;
             }
 
+            .nav-logo img {
+                height: 50px;
+            }
+
+            .nav-logo-text {
+                font-size: 0.65rem;
+            }
+
+            #navbar {
+                padding: 10px 0;
+            }
+
+            /* Hero */
+            .hero-content {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
             .hero-inner {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 32px;
+            }
+
+            .hero-headline {
+                font-size: clamp(3.2rem, 14vw, 5.5rem);
+            }
+
+            .hero-headline .ghost {
+                -webkit-text-stroke: 1.5px var(--text-primary);
+            }
+
+            .hero-sub {
+                font-size: 0.9rem;
+                max-width: 100%;
+                margin-bottom: 28px;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.65rem;
+                letter-spacing: 3px;
             }
 
             .hero-stats {
                 flex-direction: row;
-                gap: 32px;
+                gap: 24px;
                 width: 100%;
+                justify-content: space-between;
             }
 
             .hero-stat {
-                text-align: left;
+                text-align: center;
             }
 
-            .hero-headline {
-                font-size: clamp(3.5rem, 14vw, 6rem);
+            .hero-stat-number {
+                font-size: 2.5rem;
             }
 
-            .problem-grid,
-            .solution-grid,
+            .hero-stat-unit {
+                font-size: 0.6rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+            }
+
+            .btn-primary,
+            .btn-ghost {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                padding: 14px 24px;
+            }
+
+            .scroll-indicator {
+                bottom: 16px;
+            }
+
+            /* Sections */
+            #problem,
+            #solution,
+            #phases,
+            #impact,
+            #financials,
+            #cta {
+                padding: 72px 0;
+            }
+
+            #heritage {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: clamp(2rem, 7vw, 3rem);
+                margin-bottom: 28px;
+            }
+
+            .section-label {
+                font-size: 0.7rem;
+                margin-bottom: 12px;
+            }
+
+            /* Problem */
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .callout-box {
+                padding: 18px 20px;
+            }
+
+            .data-cards-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+
+            .data-card {
+                padding: 20px 18px;
+            }
+
+            .data-card-number {
+                font-size: 2.2rem;
+            }
+
+            .data-card-text {
+                font-size: 0.68rem;
+            }
+
+            /* Solution */
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .solution-image-wrap img {
+                height: 180px;
+            }
+
+            .flow-step {
+                padding: 18px 16px;
+            }
+
+            .flow-step-desc,
+            .flow-step-specs {
+                padding-left: 42px;
+            }
+
+            .flow-step-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 1.1rem;
+            }
+
+            .flow-step-name {
+                font-size: 1.1rem;
+            }
+
+            .flow-connector {
+                height: 20px;
+                margin-left: 28px;
+            }
+
+            /* Phases */
             .phases-grid {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
 
+            .phase-card {
+                padding: 28px 20px;
+            }
+
+            .phase-title {
+                font-size: 1.8rem;
+            }
+
+            .phase-track {
+                padding: 14px 16px;
+            }
+
+            .phase-metrics {
+                gap: 10px;
+            }
+
+            .phase-metric {
+                padding: 8px 10px;
+                min-width: 80px;
+            }
+
+            /* Impact */
             .impact-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .financials-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-inner {
-                flex-direction: column;
                 gap: 16px;
-                text-align: center;
+            }
+
+            .impact-card {
+                padding: 28px 22px;
             }
 
             .sdg-pills {
@@ -1393,20 +1604,162 @@
             .sdg-pill {
                 padding: 8px 14px;
             }
+
+            .sdg-pill-name {
+                font-size: 0.58rem;
+            }
+
+            /* Financials */
+            .financials-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+
+            .financial-card {
+                padding: 24px 16px;
+            }
+
+            .financial-number {
+                font-size: 2.5rem;
+            }
+
+            .financial-unit {
+                font-size: 0.7rem;
+            }
+
+            .financial-desc {
+                font-size: 0.72rem;
+            }
+
+            .progress-container {
+                padding: 24px 20px;
+            }
+
+            /* Heritage */
+            .heritage-quote {
+                font-size: clamp(1.1rem, 4vw, 1.5rem);
+            }
+
+            .heritage-vision {
+                font-size: 0.9rem;
+            }
+
+            /* CTA */
+            .cta-headline {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .cta-buttons .btn-primary,
+            .cta-buttons .btn-ghost {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cta-form {
+                max-width: 100%;
+            }
+
+            .cta-contact-info {
+                gap: 20px;
+            }
+
+            /* Footer */
+            .footer-inner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .footer-left {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            /* Mobile menu */
+            .mobile-menu a {
+                font-size: 1.6rem;
+            }
+
+            /* Orbs smaller on mobile */
+            .orb-amber {
+                width: 300px;
+                height: 300px;
+            }
+
+            .orb-teal {
+                width: 200px;
+                height: 200px;
+            }
         }
 
-        @media (max-width: 500px) {
+        /* ═══════════════════════════════════════════════
+           RESPONSIVE — SMALL MOBILE (max-width: 480px)
+           ═══════════════════════════════════════════════ */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
+
+            .nav-logo-text {
+                display: none;
+            }
+
+            .hero-headline {
+                font-size: clamp(2.8rem, 16vw, 4.5rem);
+            }
+
             .hero-stats {
                 flex-direction: column;
                 gap: 16px;
+                align-items: flex-start;
             }
 
-            .financials-grid {
-                grid-template-columns: 1fr;
+            .hero-stat {
+                text-align: left;
+                display: flex;
+                align-items: baseline;
+                gap: 10px;
+            }
+
+            .hero-stat-number {
+                font-size: 2.2rem;
             }
 
             .data-cards-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .data-card-number {
+                font-size: 2rem;
+            }
+
+            .financials-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .financial-number {
+                font-size: 2.2rem;
+            }
+
+            .sdg-pills {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .sdg-pill {
+                justify-content: center;
             }
 
             .cta-form {
@@ -1415,6 +1768,47 @@
 
             .cta-form button {
                 padding: 14px;
+            }
+
+            .phase-metrics {
+                flex-direction: column;
+            }
+
+            .phase-metric {
+                min-width: unset;
+            }
+
+            .flow-step-desc {
+                font-size: 0.8rem;
+            }
+
+            .flow-step-specs {
+                font-size: 0.62rem;
+            }
+
+            #problem,
+            #solution,
+            #phases,
+            #impact,
+            #financials,
+            #cta {
+                padding: 56px 0;
+            }
+
+            #heritage {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .haas-badge {
+                padding: 16px 20px;
+            }
+
+            .haas-badge-title {
+                font-size: 1.3rem;
             }
         }
     </style>
